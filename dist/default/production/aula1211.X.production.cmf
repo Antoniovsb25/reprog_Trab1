@@ -1,0 +1,802 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\anton\AppData\Local\Temp\s1rc.obj
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+$dist/default/production\aula1211.X.production.obj
+cinit CODE 0 78D2 78D2 36 1
+text0 CODE 0 785A 785A E 1
+text1 CODE 0 787A 787A 14 1
+text2 CODE 0 7908 7908 44 1
+text3 CODE 0 7868 7868 12 1
+text4 CODE 0 7850 7850 A 1
+text5 CODE 0 794C 794C 5C 1
+text6 CODE 0 79A8 79A8 7A 1
+text7 CODE 0 7C0E 7C0E 14C 1
+text8 CODE 0 7EAA 7EAA 156 1
+text9 CODE 0 7D5A 7D5A 150 1
+nvCOMRAM COMRAM 1 11 11 4 1
+text10 CODE 0 7AC2 7AC2 14C 1
+text11 CODE 0 7A22 7A22 A0 1
+text12 CODE 0 788E 788E 16 1
+text13 CODE 0 78A4 78A4 2E 1
+idataCOMRAM CODE 0 784C 784C 4 1
+cstackCOMRAM COMRAM 1 19 19 2 1
+dataCOMRAM COMRAM 1 15 15 4 1
+bssCOMRAM COMRAM 1 1 1 10 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-7FF 1
+SFR F60-FFF 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 4-784B 1
+STACK 60-7FF 1
+SMALLCONST 800-784B 1
+CODE 4-784B 1
+BIGRAM 1B-7FF 1
+COMRAM 1B-5F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 800-784B 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\aula1211.X.production.obj
+78A4 text13 CODE >98:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+78A6 text13 CODE >100:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+78B0 text13 CODE >101:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+78BA text13 CODE >102:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+78C4 text13 CODE >103:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+788E text12 CODE >235:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+788E text12 CODE >236:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7898 text12 CODE >237:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+78A2 text12 CODE >238:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A22 text11 CODE >240:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A22 text11 CODE >243:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A2A text11 CODE >244:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A32 text11 CODE >245:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A3C text11 CODE >247:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A44 text11 CODE >248:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A4E text11 CODE >250:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A52 text11 CODE >252:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A5A text11 CODE >253:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A62 text11 CODE >254:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A6C text11 CODE >256:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A74 text11 CODE >257:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A7E text11 CODE >259:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A82 text11 CODE >262:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A8A text11 CODE >263:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A92 text11 CODE >264:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AA0 text11 CODE >266:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AA4 text11 CODE >268:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AAA text11 CODE >269:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AB2 text11 CODE >271:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AB8 text11 CODE >272:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AC2 text10 CODE >298:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AC4 text10 CODE >302:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AC6 text10 CODE >305:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ACA text10 CODE >306:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ACE text10 CODE >307:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AD2 text10 CODE >311:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AD6 text10 CODE >312:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ADA text10 CODE >313:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ADE text10 CODE >317:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AE2 text10 CODE >318:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AE6 text10 CODE >319:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AEA text10 CODE >323:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AEE text10 CODE >324:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AF2 text10 CODE >329:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AF6 text10 CODE >330:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AFA text10 CODE >331:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7AFE text10 CODE >335:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B02 text10 CODE >336:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B06 text10 CODE >337:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B0A text10 CODE >341:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B0E text10 CODE >342:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B12 text10 CODE >343:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B16 text10 CODE >347:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B1A text10 CODE >348:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B1E text10 CODE >349:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B22 text10 CODE >353:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B26 text10 CODE >354:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B2A text10 CODE >359:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B2E text10 CODE >360:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B32 text10 CODE >361:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B36 text10 CODE >365:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B3A text10 CODE >366:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B3E text10 CODE >367:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B42 text10 CODE >371:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B46 text10 CODE >372:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B4A text10 CODE >373:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B4E text10 CODE >377:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B52 text10 CODE >378:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B56 text10 CODE >383:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B5A text10 CODE >384:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B5E text10 CODE >389:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B62 text10 CODE >390:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B66 text10 CODE >395:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B6A text10 CODE >396:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B6E text10 CODE >401:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B72 text10 CODE >402:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B76 text10 CODE >407:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B7A text10 CODE >408:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B7E text10 CODE >413:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B82 text10 CODE >414:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B86 text10 CODE >421:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B88 text10 CODE >422:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B8A text10 CODE >425:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B8E text10 CODE >426:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7B92 text10 CODE >302:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C0A text10 CODE >428:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C0A text10 CODE >429:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C0C text10 CODE >430:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D5A text9 CODE >704:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D5C text9 CODE >706:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D5E text9 CODE >708:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D62 text9 CODE >709:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D66 text9 CODE >710:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D6A text9 CODE >714:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D6E text9 CODE >715:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D72 text9 CODE >716:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D76 text9 CODE >720:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D7A text9 CODE >721:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D7E text9 CODE >722:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D82 text9 CODE >726:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D86 text9 CODE >727:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D8A text9 CODE >732:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D8E text9 CODE >733:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D92 text9 CODE >734:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D96 text9 CODE >738:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D9A text9 CODE >739:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D9E text9 CODE >740:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DA2 text9 CODE >744:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DA6 text9 CODE >745:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DAA text9 CODE >746:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DAE text9 CODE >750:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DB2 text9 CODE >751:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DB6 text9 CODE >752:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DBA text9 CODE >756:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DBE text9 CODE >757:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DC2 text9 CODE >762:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DC6 text9 CODE >763:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DCA text9 CODE >764:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DCE text9 CODE >768:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DD2 text9 CODE >769:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DD6 text9 CODE >770:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DDA text9 CODE >774:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DDE text9 CODE >775:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DE2 text9 CODE >776:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DE6 text9 CODE >780:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DEA text9 CODE >781:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DEE text9 CODE >786:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DF2 text9 CODE >787:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DF6 text9 CODE >792:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DFA text9 CODE >793:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7DFE text9 CODE >798:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E02 text9 CODE >799:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E06 text9 CODE >804:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E0A text9 CODE >805:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E0E text9 CODE >810:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E12 text9 CODE >811:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E16 text9 CODE >816:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E1A text9 CODE >817:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E1E text9 CODE >824:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E20 text9 CODE >825:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E22 text9 CODE >828:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E26 text9 CODE >829:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7E2A text9 CODE >706:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EA6 text9 CODE >832:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EA6 text9 CODE >833:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EA8 text9 CODE >834:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EAA text8 CODE >432:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EAC text8 CODE >436:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EAE text8 CODE >439:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EB2 text8 CODE >440:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EB6 text8 CODE >441:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EBA text8 CODE >445:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EBE text8 CODE >446:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EC2 text8 CODE >447:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EC6 text8 CODE >451:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ECA text8 CODE >452:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ECE text8 CODE >453:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ED2 text8 CODE >457:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7ED6 text8 CODE >458:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EDA text8 CODE >463:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EDE text8 CODE >464:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EE2 text8 CODE >465:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EE6 text8 CODE >469:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EEA text8 CODE >470:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EEE text8 CODE >471:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EF2 text8 CODE >475:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EF6 text8 CODE >476:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EFA text8 CODE >477:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7EFE text8 CODE >481:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F02 text8 CODE >482:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F06 text8 CODE >487:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F0A text8 CODE >488:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F0E text8 CODE >489:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F12 text8 CODE >493:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F16 text8 CODE >494:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F1A text8 CODE >499:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F1E text8 CODE >500:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F22 text8 CODE >501:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F26 text8 CODE >505:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F2A text8 CODE >506:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F2E text8 CODE >511:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F32 text8 CODE >512:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F36 text8 CODE >517:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F3A text8 CODE >518:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F3E text8 CODE >523:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F42 text8 CODE >524:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F46 text8 CODE >529:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F4A text8 CODE >530:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F4E text8 CODE >535:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F52 text8 CODE >536:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F56 text8 CODE >541:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F5A text8 CODE >542:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F5E text8 CODE >543:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F62 text8 CODE >547:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F66 text8 CODE >548:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F6A text8 CODE >553:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F6E text8 CODE >554:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F72 text8 CODE >555:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F74 text8 CODE >556:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F76 text8 CODE >565:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F7A text8 CODE >566:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7F7E text8 CODE >436:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7FFC text8 CODE >568:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7FFC text8 CODE >569:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7FFE text8 CODE >570:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C0E text7 CODE >572:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C10 text7 CODE >574:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C12 text7 CODE >576:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C16 text7 CODE >577:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C1A text7 CODE >578:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C1E text7 CODE >582:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C22 text7 CODE >583:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C26 text7 CODE >584:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C2A text7 CODE >588:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C2E text7 CODE >589:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C32 text7 CODE >590:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C36 text7 CODE >594:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C3A text7 CODE >595:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C3E text7 CODE >600:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C42 text7 CODE >601:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C46 text7 CODE >602:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C4A text7 CODE >606:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C4E text7 CODE >607:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C52 text7 CODE >608:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C56 text7 CODE >612:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C5A text7 CODE >613:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C5E text7 CODE >614:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C62 text7 CODE >618:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C66 text7 CODE >619:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C6A text7 CODE >620:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C6E text7 CODE >624:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C72 text7 CODE >625:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C76 text7 CODE >630:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C7A text7 CODE >631:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C7E text7 CODE >636:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C82 text7 CODE >637:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C86 text7 CODE >638:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C8A text7 CODE >642:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C8E text7 CODE >643:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C92 text7 CODE >648:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C96 text7 CODE >649:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C9A text7 CODE >654:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7C9E text7 CODE >655:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CA2 text7 CODE >660:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CA6 text7 CODE >661:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CAA text7 CODE >662:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CAE text7 CODE >666:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CB2 text7 CODE >667:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CB6 text7 CODE >672:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CBA text7 CODE >673:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CBE text7 CODE >678:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CC2 text7 CODE >679:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CC6 text7 CODE >684:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CCA text7 CODE >685:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CCE text7 CODE >692:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CD0 text7 CODE >693:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CD2 text7 CODE >696:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CD6 text7 CODE >697:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7CDA text7 CODE >574:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D56 text7 CODE >700:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D56 text7 CODE >701:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7D58 text7 CODE >702:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79A8 text6 CODE >277:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79A8 text6 CODE >279:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79B4 text6 CODE >280:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79BC text6 CODE >281:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79C6 text6 CODE >283:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79D2 text6 CODE >284:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79DA text6 CODE >285:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79E4 text6 CODE >287:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79F0 text6 CODE >288:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79F8 text6 CODE >289:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A02 text6 CODE >291:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A0E text6 CODE >292:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7A16 text6 CODE >293:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+794C text5 CODE >205:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+794C text5 CODE >209:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7958 text5 CODE >210:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+795C text5 CODE >211:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+795E text5 CODE >213:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7966 text5 CODE >214:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+796A text5 CODE >217:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7976 text5 CODE >218:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+797A text5 CODE >219:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+797C text5 CODE >221:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7984 text5 CODE >222:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7988 text5 CODE >225:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7994 text5 CODE >226:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7998 text5 CODE >227:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+799A text5 CODE >229:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+79A2 text5 CODE >230:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7850 text4 CODE >92:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7850 text4 CODE >94:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7858 text4 CODE >96:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7868 text3 CODE >197:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7868 text3 CODE >199:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+786C text3 CODE >200:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7878 text3 CODE >202:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7908 text2 CODE >183:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7908 text2 CODE >184:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7910 text2 CODE >185:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7918 text2 CODE >187:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+791C text2 CODE >188:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7920 text2 CODE >189:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7924 text2 CODE >191:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+792E text2 CODE >192:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7938 text2 CODE >193:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7942 text2 CODE >194:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+794A text2 CODE >195:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+787A text1 CODE >115:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+787A text1 CODE >116:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+787E text1 CODE >117:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7882 text1 CODE >118:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7886 text1 CODE >119:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+788A text1 CODE >120:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+788C text1 CODE >121:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+785A text0 CODE >165:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+785A text0 CODE >166:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+785E text0 CODE >167:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+7862 text0 CODE >168:C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+78D2 cinit CODE >557:C:\Users\anton\AppData\Local\Temp\s1rc.
+78D2 cinit CODE >559:C:\Users\anton\AppData\Local\Temp\s1rc.
+78D2 cinit CODE >562:C:\Users\anton\AppData\Local\Temp\s1rc.
+78D2 cinit CODE >631:C:\Users\anton\AppData\Local\Temp\s1rc.
+78D4 cinit CODE >632:C:\Users\anton\AppData\Local\Temp\s1rc.
+78D6 cinit CODE >633:C:\Users\anton\AppData\Local\Temp\s1rc.
+78D8 cinit CODE >634:C:\Users\anton\AppData\Local\Temp\s1rc.
+78DA cinit CODE >635:C:\Users\anton\AppData\Local\Temp\s1rc.
+78DC cinit CODE >636:C:\Users\anton\AppData\Local\Temp\s1rc.
+78DE cinit CODE >637:C:\Users\anton\AppData\Local\Temp\s1rc.
+78E2 cinit CODE >638:C:\Users\anton\AppData\Local\Temp\s1rc.
+78E6 cinit CODE >639:C:\Users\anton\AppData\Local\Temp\s1rc.
+78E6 cinit CODE >640:C:\Users\anton\AppData\Local\Temp\s1rc.
+78E8 cinit CODE >641:C:\Users\anton\AppData\Local\Temp\s1rc.
+78EC cinit CODE >642:C:\Users\anton\AppData\Local\Temp\s1rc.
+78EE cinit CODE >643:C:\Users\anton\AppData\Local\Temp\s1rc.
+78F0 cinit CODE >644:C:\Users\anton\AppData\Local\Temp\s1rc.
+78F2 cinit CODE >648:C:\Users\anton\AppData\Local\Temp\s1rc.
+78F6 cinit CODE >649:C:\Users\anton\AppData\Local\Temp\s1rc.
+78F8 cinit CODE >650:C:\Users\anton\AppData\Local\Temp\s1rc.
+78F8 cinit CODE >651:C:\Users\anton\AppData\Local\Temp\s1rc.
+78FA cinit CODE >652:C:\Users\anton\AppData\Local\Temp\s1rc.
+78FC cinit CODE >653:C:\Users\anton\AppData\Local\Temp\s1rc.
+78FE cinit CODE >659:C:\Users\anton\AppData\Local\Temp\s1rc.
+78FE cinit CODE >662:C:\Users\anton\AppData\Local\Temp\s1rc.
+7900 cinit CODE >663:C:\Users\anton\AppData\Local\Temp\s1rc.
+7902 cinit CODE >664:C:\Users\anton\AppData\Local\Temp\s1rc.
+7904 cinit CODE >665:C:\Users\anton\AppData\Local\Temp\s1rc.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\aula1211.X.production.obj
+__Hspace_0 30000E 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Hspace_1 1B 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Hspace_2 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\aula1211.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\anton\AppData\Local\Temp\s1rc.obj
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\aula1211.X.production.obj
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+f_maq_n_3_d@atual 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+_dd B 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+_du A 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+_sw 10 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\aula1211.X.production.obj
+_LATA F89 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_LATB F8A 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_LATC F8B 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_LATD F8C 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_LEDR E 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\s1rc.obj
+_loop 7868 0 CODE 0 text3 dist/default/production\aula1211.X.production.obj
+_main 785A 0 CODE 0 text0 dist/default/production\aula1211.X.production.obj
+start 0 0 CODE 0 init C:\Users\anton\AppData\Local\Temp\s1rc.obj
+__size_of_loop 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+f_timer2@vantre0 15 0 COMRAM 1 dataCOMRAM dist/default/production\aula1211.X.production.obj
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup dist/default/production\aula1211.X.production.obj
+f_maq_n_3_c@prox 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\aula1211.X.production.obj
+f_maq_n_3_d@prox 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\aula1211.X.production.obj
+__accesstop 60 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\s1rc.obj
+intlevel0 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\s1rc.obj
+intlevel1 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\s1rc.obj
+intlevel2 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\s1rc.obj
+intlevel3 0 0 CODE 0 text C:\Users\anton\AppData\Local\Temp\s1rc.obj
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__CFG_USBDIV$1 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_f_maq_n_3_c 7AC2 0 CODE 0 text10 dist/default/production\aula1211.X.production.obj
+_f_maq_n_3_d 7D5A 0 CODE 0 text9 dist/default/production\aula1211.X.production.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\aula1211.X.production.obj
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\aula1211.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\aula1211.X.production.obj
+__pidataCOMRAM 784C 0 CODE 0 idataCOMRAM dist/default/production\aula1211.X.production.obj
+_ADCON1 FC1 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\s1rc.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\anton\AppData\Local\Temp\s1rc.obj
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\aula1211.X.production.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\aula1211.X.production.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\aula1211.X.production.obj
+f_maq_n_primo_d@atual 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\aula1211.X.production.obj
+f_timers@c_timer1 5 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+f_timers@c_timer2 3 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+f_timers@c_timer3 1 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\aula1211.X.production.obj
+_acelera 9 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\aula1211.X.production.obj
+__size_of_setup 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\aula1211.X.production.obj
+__Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\aula1211.X.production.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+start_initialization 78D2 0 CODE 0 cinit dist/default/production\aula1211.X.production.obj
+__CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\aula1211.X.production.obj
+___rparam_used 1 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__end_of_f_maq_n_primo_c 8000 0 CODE 0 text8 dist/default/production\aula1211.X.production.obj
+__end_of_f_maq_n_primo_d 7D5A 0 CODE 0 text7 dist/default/production\aula1211.X.production.obj
+LAT@porta 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\aula1211.X.production.obj
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\aula1211.X.production.obj
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\aula1211.X.production.obj
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\aula1211.X.production.obj
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\aula1211.X.production.obj
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\aula1211.X.production.obj
+__Hbank6 0 0 ABS 0 bank6 dist/default/production\aula1211.X.production.obj
+__Hbank7 0 0 ABS 0 bank7 dist/default/production\aula1211.X.production.obj
+__Hcinit 0 0 ABS 0 cinit dist/default/production\aula1211.X.production.obj
+__Hconst 0 0 CONST 0 const dist/default/production\aula1211.X.production.obj
+__Hidata 0 0 CODE 0 idata dist/default/production\aula1211.X.production.obj
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\aula1211.X.production.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\aula1211.X.production.obj
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\aula1211.X.production.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\aula1211.X.production.obj
+__Hstack 0 0 STACK 2 stack dist/default/production\aula1211.X.production.obj
+__Htext0 0 0 ABS 0 text0 dist/default/production\aula1211.X.production.obj
+__Htext1 0 0 ABS 0 text1 dist/default/production\aula1211.X.production.obj
+__Htext2 0 0 ABS 0 text2 dist/default/production\aula1211.X.production.obj
+__Htext3 0 0 ABS 0 text3 dist/default/production\aula1211.X.production.obj
+__Htext4 0 0 ABS 0 text4 dist/default/production\aula1211.X.production.obj
+__Htext5 0 0 ABS 0 text5 dist/default/production\aula1211.X.production.obj
+__Htext6 0 0 ABS 0 text6 dist/default/production\aula1211.X.production.obj
+__Htext7 0 0 ABS 0 text7 dist/default/production\aula1211.X.production.obj
+__Htext8 0 0 ABS 0 text8 dist/default/production\aula1211.X.production.obj
+__Htext9 0 0 ABS 0 text9 dist/default/production\aula1211.X.production.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\aula1211.X.production.obj
+__Hbigram 0 0 ABS 0 bigram dist/default/production\aula1211.X.production.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\anton\AppData\Local\Temp\s1rc.obj
+__end_of_usleep 785A 0 CODE 0 text4 dist/default/production\aula1211.X.production.obj
+f_timer2@vantd0 17 0 COMRAM 1 dataCOMRAM dist/default/production\aula1211.X.production.obj
+f_timer2@vantd1 16 0 COMRAM 1 dataCOMRAM dist/default/production\aula1211.X.production.obj
+f_timer2@vatual 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__Hcomram 0 0 ABS 0 comram dist/default/production\aula1211.X.production.obj
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production\aula1211.X.production.obj
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\aula1211.X.production.obj
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\aula1211.X.production.obj
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\aula1211.X.production.obj
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\aula1211.X.production.obj
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\aula1211.X.production.obj
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\aula1211.X.production.obj
+__Lbank6 0 0 ABS 0 bank6 dist/default/production\aula1211.X.production.obj
+__Lbank7 0 0 ABS 0 bank7 dist/default/production\aula1211.X.production.obj
+__Lcinit 0 0 ABS 0 cinit dist/default/production\aula1211.X.production.obj
+__Lconst 0 0 CONST 0 const dist/default/production\aula1211.X.production.obj
+__Lidata 0 0 CODE 0 idata dist/default/production\aula1211.X.production.obj
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\aula1211.X.production.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\aula1211.X.production.obj
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\aula1211.X.production.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\aula1211.X.production.obj
+__Lstack 0 0 STACK 2 stack dist/default/production\aula1211.X.production.obj
+__Ltext0 0 0 ABS 0 text0 dist/default/production\aula1211.X.production.obj
+__Ltext1 0 0 ABS 0 text1 dist/default/production\aula1211.X.production.obj
+__Ltext2 0 0 ABS 0 text2 dist/default/production\aula1211.X.production.obj
+__Ltext3 0 0 ABS 0 text3 dist/default/production\aula1211.X.production.obj
+__Ltext4 0 0 ABS 0 text4 dist/default/production\aula1211.X.production.obj
+__Ltext5 0 0 ABS 0 text5 dist/default/production\aula1211.X.production.obj
+__Ltext6 0 0 ABS 0 text6 dist/default/production\aula1211.X.production.obj
+__Ltext7 0 0 ABS 0 text7 dist/default/production\aula1211.X.production.obj
+__Ltext8 0 0 ABS 0 text8 dist/default/production\aula1211.X.production.obj
+__Ltext9 0 0 ABS 0 text9 dist/default/production\aula1211.X.production.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\aula1211.X.production.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\aula1211.X.production.obj
+__Habs1 0 0 ABS 0 abs1 dist/default/production\aula1211.X.production.obj
+__Hdata 0 0 ABS 0 data dist/default/production\aula1211.X.production.obj
+__Hinit 4 0 CODE 0 init dist/default/production\aula1211.X.production.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\aula1211.X.production.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\aula1211.X.production.obj
+__Htemp 0 0 COMRAM 1 temp dist/default/production\aula1211.X.production.obj
+__Htext 0 0 ABS 0 text dist/default/production\aula1211.X.production.obj
+__Labs1 0 0 ABS 0 abs1 dist/default/production\aula1211.X.production.obj
+__Ldata 0 0 ABS 0 data dist/default/production\aula1211.X.production.obj
+__Linit 0 0 CODE 0 init dist/default/production\aula1211.X.production.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\aula1211.X.production.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\aula1211.X.production.obj
+__Ltemp 0 0 COMRAM 1 temp dist/default/production\aula1211.X.production.obj
+__Ltext 0 0 ABS 0 text dist/default/production\aula1211.X.production.obj
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__Hintret 0 0 ABS 0 intret dist/default/production\aula1211.X.production.obj
+__Hirdata 0 0 CODE 0 irdata dist/default/production\aula1211.X.production.obj
+_LAT 78A4 0 CODE 0 text13 dist/default/production\aula1211.X.production.obj
+_RD0 7C18 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_RD1 7C19 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_RE0 7C20 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__S0 30000E 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__S1 1B 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__S2 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_dir C 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+_key F 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+_seq D 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__CFG_VREGEN$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_f_maq_n_primo_c 7EAA 0 CODE 0 text8 dist/default/production\aula1211.X.production.obj
+_f_maq_n_primo_d 7C0E 0 CODE 0 text7 dist/default/production\aula1211.X.production.obj
+__pnvCOMRAM 11 0 COMRAM 1 nvCOMRAM dist/default/production\aula1211.X.production.obj
+__CFG_PLLDIV$1 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+f_maq_n_primo_c@prox 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+f_maq_n_primo_d@prox 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\aula1211.X.production.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\aula1211.X.production.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\aula1211.X.production.obj
+_estado 18 0 COMRAM 1 dataCOMRAM dist/default/production\aula1211.X.production.obj
+__end_of_f_maq_n_3_c 7C0E 0 CODE 0 text10 dist/default/production\aula1211.X.production.obj
+__end_of_f_maq_n_3_d 7EAA 0 CODE 0 text9 dist/default/production\aula1211.X.production.obj
+__end_of_LAT 78D2 0 CODE 0 text13 dist/default/production\aula1211.X.production.obj
+__Lintentry 0 0 ABS 0 intentry dist/default/production\aula1211.X.production.obj
+__Hramtop 800 0 RAM 0 ramtop dist/default/production\aula1211.X.production.obj
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\aula1211.X.production.obj
+__activetblptr 2 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\aula1211.X.production.obj
+__Htext10 0 0 ABS 0 text10 dist/default/production\aula1211.X.production.obj
+__Htext11 0 0 ABS 0 text11 dist/default/production\aula1211.X.production.obj
+__Htext12 0 0 ABS 0 text12 dist/default/production\aula1211.X.production.obj
+__Htext13 0 0 ABS 0 text13 dist/default/production\aula1211.X.production.obj
+__ptext10 7AC2 0 CODE 0 text10 dist/default/production\aula1211.X.production.obj
+__ptext11 7A22 0 CODE 0 text11 dist/default/production\aula1211.X.production.obj
+__ptext12 788E 0 CODE 0 text12 dist/default/production\aula1211.X.production.obj
+__ptext13 78A4 0 CODE 0 text13 dist/default/production\aula1211.X.production.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\aula1211.X.production.obj
+__Lbigram 0 0 ABS 0 bigram dist/default/production\aula1211.X.production.obj
+__CFG_BOR$ON 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_BORV$3 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lcomram 0 0 ABS 0 comram dist/default/production\aula1211.X.production.obj
+__Lconfig 300000 0 CONFIG 0 config dist/default/production\aula1211.X.production.obj
+__size_of_setup_hw 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\aula1211.X.production.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\aula1211.X.production.obj
+_max_timer1 13 0 COMRAM 1 nvCOMRAM dist/default/production\aula1211.X.production.obj
+_max_timer2 11 0 COMRAM 1 nvCOMRAM dist/default/production\aula1211.X.production.obj
+_max_timer3 7 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__CFG_CCP2MX$ON 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+stackhi 7FF 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\s1rc.obj
+stacklo 60 0 ABS 0 - C:\Users\anton\AppData\Local\Temp\s1rc.obj
+_usleep 7850 0 CODE 0 text4 dist/default/production\aula1211.X.production.obj
+__Lintcode 0 0 CODE 0 intcode dist/default/production\aula1211.X.production.obj
+__size_of_f_maq_n_primo_c 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__size_of_f_maq_n_primo_d 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lintret 0 0 ABS 0 intret dist/default/production\aula1211.X.production.obj
+__Lirdata 0 0 CODE 0 irdata dist/default/production\aula1211.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_ICPRT$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lspace_0 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lspace_1 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lspace_2 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/production\aula1211.X.production.obj
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__CFG_CPUDIV$OSC1_PLL2 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+end_of_initialization 78FE 0 CODE 0 cinit dist/default/production\aula1211.X.production.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\aula1211.X.production.obj
+__Hintentry 0 0 ABS 0 intentry dist/default/production\aula1211.X.production.obj
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+f_maq_n_3_c@atual 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\aula1211.X.production.obj
+_setup_hw 787A 0 CODE 0 text1 dist/default/production\aula1211.X.production.obj
+__Lramtop 800 0 RAM 0 ramtop dist/default/production\aula1211.X.production.obj
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\aula1211.X.production.obj
+__pcinit 78D2 0 CODE 0 cinit dist/default/production\aula1211.X.production.obj
+__ptext0 785A 0 CODE 0 text0 dist/default/production\aula1211.X.production.obj
+__ptext1 787A 0 CODE 0 text1 dist/default/production\aula1211.X.production.obj
+__ptext2 7908 0 CODE 0 text2 dist/default/production\aula1211.X.production.obj
+__ptext3 7868 0 CODE 0 text3 dist/default/production\aula1211.X.production.obj
+__ptext4 7850 0 CODE 0 text4 dist/default/production\aula1211.X.production.obj
+__ptext5 794C 0 CODE 0 text5 dist/default/production\aula1211.X.production.obj
+__ptext6 79A8 0 CODE 0 text6 dist/default/production\aula1211.X.production.obj
+__ptext7 7C0E 0 CODE 0 text7 dist/default/production\aula1211.X.production.obj
+__ptext8 7EAA 0 CODE 0 text8 dist/default/production\aula1211.X.production.obj
+__ptext9 7D5A 0 CODE 0 text9 dist/default/production\aula1211.X.production.obj
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\aula1211.X.production.obj
+__size_of_usleep 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Ltext10 0 0 ABS 0 text10 dist/default/production\aula1211.X.production.obj
+__Ltext11 0 0 ABS 0 text11 dist/default/production\aula1211.X.production.obj
+__Ltext12 0 0 ABS 0 text12 dist/default/production\aula1211.X.production.obj
+__Ltext13 0 0 ABS 0 text13 dist/default/production\aula1211.X.production.obj
+__ramtop 800 0 RAM 0 ramtop C:\Users\anton\AppData\Local\Temp\s1rc.obj
+__end_of_setup_hw 788E 0 CODE 0 text1 dist/default/production\aula1211.X.production.obj
+usleep@tempo 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup dist/default/production\aula1211.X.production.obj
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\aula1211.X.production.obj
+__size_of_f_maq_n_3_c 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__size_of_f_maq_n_3_d 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\aula1211.X.production.obj
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+___param_bank 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__size_of_f_timer1 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__size_of_f_timer2 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__size_of_f_timer3 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__size_of_f_timers 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\aula1211.X.production.obj
+__end_of__initialization 78FE 0 CODE 0 cinit dist/default/production\aula1211.X.production.obj
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\aula1211.X.production.obj
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\aula1211.X.production.obj
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__pcstackCOMRAM 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__end_of_loop 787A 0 CODE 0 text3 dist/default/production\aula1211.X.production.obj
+__end_of_main 7868 0 CODE 0 text0 dist/default/production\aula1211.X.production.obj
+_PORTA F80 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_PORTB F81 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_PORTC F82 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_PORTD F83 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_TRISA F92 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_TRISB F93 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_TRISC F94 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_TRISD F95 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__end_of_setup 794C 0 CODE 0 text2 dist/default/production\aula1211.X.production.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__HRAM 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Hbss 0 0 RAM 1 bss dist/default/production\aula1211.X.production.obj
+__Hram 0 0 ABS 0 ram dist/default/production\aula1211.X.production.obj
+__Hsfr 0 0 ABS 0 sfr dist/default/production\aula1211.X.production.obj
+__LRAM 1 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__Lbss 0 0 RAM 1 bss dist/default/production\aula1211.X.production.obj
+__Lram 0 0 ABS 0 ram dist/default/production\aula1211.X.production.obj
+__Lsfr 0 0 ABS 0 sfr dist/default/production\aula1211.X.production.obj
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+_setup 7908 0 CODE 0 text2 dist/default/production\aula1211.X.production.obj
+__size_of_LAT 0 0 ABS 0 - dist/default/production\aula1211.X.production.obj
+f_maq_n_primo_c@atual 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+LAT@dado 19 0 COMRAM 1 cstackCOMRAM dist/default/production\aula1211.X.production.obj
+__initialization 78D2 0 CODE 0 cinit dist/default/production\aula1211.X.production.obj
+_f_timer1 788E 0 CODE 0 text12 dist/default/production\aula1211.X.production.obj
+_f_timer2 7A22 0 CODE 0 text11 dist/default/production\aula1211.X.production.obj
+_f_timer3 79A8 0 CODE 0 text6 dist/default/production\aula1211.X.production.obj
+_f_timers 794C 0 CODE 0 text5 dist/default/production\aula1211.X.production.obj
+__pdataCOMRAM 15 0 COMRAM 1 dataCOMRAM dist/default/production\aula1211.X.production.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\aula1211.X.production.obj
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\aula1211.X.production.obj
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\aula1211.X.production.obj
+__end_of_f_timer1 78A4 0 CODE 0 text12 dist/default/production\aula1211.X.production.obj
+__end_of_f_timer2 7AC2 0 CODE 0 text11 dist/default/production\aula1211.X.production.obj
+__end_of_f_timer3 7A22 0 CODE 0 text6 dist/default/production\aula1211.X.production.obj
+__end_of_f_timers 79A8 0 CODE 0 text5 dist/default/production\aula1211.X.production.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\aula1211.X.production.obj
+__Hintcode 0 0 CODE 0 intcode dist/default/production\aula1211.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 78D2 78D2 36 1
+idloc 0 200000 200000 8 1
+text0 0 785A 785A E 1
+text1 0 787A 787A 14 1
+text2 0 7908 7908 44 1
+text3 0 7868 7868 12 1
+text4 0 7850 7850 A 1
+text5 0 794C 794C 5C 1
+text6 0 79A8 79A8 7A 1
+text7 0 7C0E 7C0E 14C 1
+text8 0 7EAA 7EAA 156 1
+text9 0 7D5A 7D5A 150 1
+text10 0 7AC2 7AC2 14C 1
+text11 0 7A22 7A22 A0 1
+text12 0 788E 788E 16 1
+text13 0 78A4 78A4 2E 1
+idataCOMRAM 0 784C 784C 4 1
+reset_vec 0 0 0 4 1
+bssCOMRAM 1 1 1 1A 1
+config 0 300000 300000 E 1

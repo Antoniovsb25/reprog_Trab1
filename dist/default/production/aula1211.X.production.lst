@@ -1,0 +1,2944 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.41 build -162212810 
+                                                                                               Mon Nov 16 22:53:50 2020
+
+Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250102
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    21                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    22                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    23                           	psect	text12,global,reloc=2,class=CODE,delta=1
+    24                           	psect	text13,global,reloc=2,class=CODE,delta=1
+    25                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    26                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    27  0000                     
+    28                           ; Version 1.41
+    29                           ; Generated 25/01/2017 GMT
+    30                           ; 
+    31                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    32                           ; All rights reserved.
+    33                           ; 
+    34                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    35                           ; 
+    36                           ; Redistribution and use in source and binary forms, with or without modification, are
+    37                           ; permitted provided that the following conditions are met:
+    38                           ; 
+    39                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    40                           ;        conditions and the following disclaimer.
+    41                           ; 
+    42                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    43                           ;        of conditions and the following disclaimer in the documentation and/or other
+    44                           ;        materials provided with the distribution.
+    45                           ; 
+    46                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    47                           ;        software without specific prior written permission.
+    48                           ; 
+    49                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    50                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    51                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    52                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    53                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    54                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    55                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    56                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    57                           ; 
+    58                           ; 
+    59                           ; Code-generator required, PIC18F4550 Definitions
+    60                           ; 
+    61                           ; SFR Addresses
+    62  0000                     
+    63                           	psect	idataCOMRAM
+    64  00784C                     __pidataCOMRAM:
+    65                           	opt stack 0
+    66                           
+    67                           ;initializer for f_timer2@vantre0
+    68  00784C  01                 	db	1
+    69                           
+    70                           ;initializer for f_timer2@vantd1
+    71  00784D  01                 	db	1
+    72                           
+    73                           ;initializer for f_timer2@vantd0
+    74  00784E  01                 	db	1
+    75                           
+    76                           ;initializer for _estado
+    77  00784F  01                 	db	1
+    78                           
+    79                           	psect	nvCOMRAM
+    80  000011                     __pnvCOMRAM:
+    81                           	opt stack 0
+    82  000011                     _max_timer2:
+    83                           	opt stack 0
+    84  000011                     	ds	2
+    85  000013                     _max_timer1:
+    86                           	opt stack 0
+    87  000013                     	ds	2
+    88  0000                     _TRISD	set	3989
+    89  0000                     _TRISC	set	3988
+    90  0000                     _TRISB	set	3987
+    91  0000                     _TRISA	set	3986
+    92  0000                     _ADCON1	set	4033
+    93  0000                     _PORTD	set	3971
+    94  0000                     _PORTC	set	3970
+    95  0000                     _PORTB	set	3969
+    96  0000                     _PORTA	set	3968
+    97  0000                     _LATD	set	3980
+    98  0000                     _LATC	set	3979
+    99  0000                     _LATB	set	3978
+   100  0000                     _LATA	set	3977
+   101  0000                     _RE0	set	31776
+   102  0000                     _RD1	set	31769
+   103  0000                     _RD0	set	31768
+   104                           
+   105                           ; #config settings
+   106  0000                     
+   107                           	psect	cinit
+   108  0078D2                     __pcinit:
+   109                           	opt stack 0
+   110  0078D2                     start_initialization:
+   111                           	opt stack 0
+   112  0078D2                     __initialization:
+   113                           	opt stack 0
+   114                           
+   115                           ; Initialize objects allocated to COMRAM (4 bytes)
+   116                           ; load TBLPTR registers with __pidataCOMRAM
+   117  0078D2  0E4C               	movlw	low __pidataCOMRAM
+   118  0078D4  6EF6               	movwf	tblptrl,c
+   119  0078D6  0E78               	movlw	high __pidataCOMRAM
+   120  0078D8  6EF7               	movwf	tblptrh,c
+   121  0078DA  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   122  0078DC  6EF8               	movwf	tblptru,c
+   123  0078DE  EE00  F015         	lfsr	0,__pdataCOMRAM
+   124  0078E2  EE10 F004          	lfsr	1,4
+   125  0078E6                     copy_data0:
+   126  0078E6  0009               	tblrd		*+
+   127  0078E8  CFF5 FFEE          	movff	tablat,postinc0
+   128  0078EC  50E5               	movf	postdec1,w,c
+   129  0078EE  50E1               	movf	fsr1l,w,c
+   130  0078F0  E1FA               	bnz	copy_data0
+   131                           
+   132                           ; Clear objects allocated to COMRAM (16 bytes)
+   133  0078F2  EE00  F001         	lfsr	0,__pbssCOMRAM
+   134  0078F6  0E10               	movlw	16
+   135  0078F8                     clear_0:
+   136  0078F8  6AEE               	clrf	postinc0,c
+   137  0078FA  06E8               	decf	wreg,f,c
+   138  0078FC  E1FD               	bnz	clear_0
+   139  0078FE                     end_of_initialization:
+   140                           	opt stack 0
+   141  0078FE                     __end_of__initialization:
+   142                           	opt stack 0
+   143  0078FE  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   144  007900  6EF8               	movwf	tblptru,c
+   145  007902  0100               	movlb	0
+   146  007904  EF2D  F03C         	goto	_main	;jump to C main() function
+   147                           tblptru	equ	0xFF8
+   148                           tblptrh	equ	0xFF7
+   149                           tblptrl	equ	0xFF6
+   150                           tablat	equ	0xFF5
+   151                           postinc0	equ	0xFEE
+   152                           wreg	equ	0xFE8
+   153                           postdec1	equ	0xFE5
+   154                           fsr1l	equ	0xFE1
+   155                           
+   156                           	psect	bssCOMRAM
+   157  000001                     __pbssCOMRAM:
+   158                           	opt stack 0
+   159  000001                     f_timers@c_timer3:
+   160                           	opt stack 0
+   161  000001                     	ds	2
+   162  000003                     f_timers@c_timer2:
+   163                           	opt stack 0
+   164  000003                     	ds	2
+   165  000005                     f_timers@c_timer1:
+   166                           	opt stack 0
+   167  000005                     	ds	2
+   168  000007                     _max_timer3:
+   169                           	opt stack 0
+   170  000007                     	ds	2
+   171  000009                     _acelera:
+   172                           	opt stack 0
+   173  000009                     	ds	1
+   174  00000A                     _du:
+   175                           	opt stack 0
+   176  00000A                     	ds	1
+   177  00000B                     _dd:
+   178                           	opt stack 0
+   179  00000B                     	ds	1
+   180  00000C                     _dir:
+   181                           	opt stack 0
+   182  00000C                     	ds	1
+   183  00000D                     _seq:
+   184                           	opt stack 0
+   185  00000D                     	ds	1
+   186  00000E                     _LEDR:
+   187                           	opt stack 0
+   188  00000E                     	ds	1
+   189  00000F                     _key:
+   190                           	opt stack 0
+   191  00000F                     	ds	1
+   192  000010                     _sw:
+   193                           	opt stack 0
+   194  000010                     	ds	1
+   195                           tblptru	equ	0xFF8
+   196                           tblptrh	equ	0xFF7
+   197                           tblptrl	equ	0xFF6
+   198                           tablat	equ	0xFF5
+   199                           postinc0	equ	0xFEE
+   200                           wreg	equ	0xFE8
+   201                           postdec1	equ	0xFE5
+   202                           fsr1l	equ	0xFE1
+   203                           
+   204                           	psect	dataCOMRAM
+   205  000015                     __pdataCOMRAM:
+   206                           	opt stack 0
+   207  000015                     f_timer2@vantre0:
+   208                           	opt stack 0
+   209  000015                     	ds	1
+   210  000016                     f_timer2@vantd1:
+   211                           	opt stack 0
+   212  000016                     	ds	1
+   213  000017                     f_timer2@vantd0:
+   214                           	opt stack 0
+   215  000017                     	ds	1
+   216  000018                     _estado:
+   217                           	opt stack 0
+   218  000018                     	ds	1
+   219                           tblptru	equ	0xFF8
+   220                           tblptrh	equ	0xFF7
+   221                           tblptrl	equ	0xFF6
+   222                           tablat	equ	0xFF5
+   223                           postinc0	equ	0xFEE
+   224                           wreg	equ	0xFE8
+   225                           postdec1	equ	0xFE5
+   226                           fsr1l	equ	0xFE1
+   227                           
+   228                           	psect	cstackCOMRAM
+   229  000019                     __pcstackCOMRAM:
+   230                           	opt stack 0
+   231  000019                     LAT@dado:
+   232                           	opt stack 0
+   233  000019                     f_timer2@vatual:
+   234                           	opt stack 0
+   235  000019                     f_maq_n_3_c@atual:
+   236                           	opt stack 0
+   237  000019                     f_maq_n_primo_c@atual:
+   238                           	opt stack 0
+   239  000019                     f_maq_n_primo_d@atual:
+   240                           	opt stack 0
+   241  000019                     f_maq_n_3_d@atual:
+   242                           	opt stack 0
+   243  000019                     usleep@tempo:
+   244                           	opt stack 0
+   245                           
+   246                           ; 2 bytes @ 0x0
+   247  000019                     	ds	1
+   248  00001A                     LAT@porta:
+   249                           	opt stack 0
+   250  00001A                     f_maq_n_3_c@prox:
+   251                           	opt stack 0
+   252  00001A                     f_maq_n_primo_c@prox:
+   253                           	opt stack 0
+   254  00001A                     f_maq_n_primo_d@prox:
+   255                           	opt stack 0
+   256  00001A                     f_maq_n_3_d@prox:
+   257                           	opt stack 0
+   258                           
+   259                           ; 1 bytes @ 0x1
+   260  00001A                     	ds	1
+   261  00001B                     tblptru	equ	0xFF8
+   262                           tblptrh	equ	0xFF7
+   263                           tblptrl	equ	0xFF6
+   264                           tablat	equ	0xFF5
+   265                           postinc0	equ	0xFEE
+   266                           wreg	equ	0xFE8
+   267                           postdec1	equ	0xFE5
+   268                           fsr1l	equ	0xFE1
+   269                           
+   270                           ; 1 bytes @ 0x2
+   271 ;;
+   272 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   273 ;;
+   274 ;; *************** function _main *****************
+   275 ;; Defined at:
+   276 ;;		line 165 in file "aula1211.c"
+   277 ;; Parameters:    Size  Location     Type
+   278 ;;		None
+   279 ;; Auto vars:     Size  Location     Type
+   280 ;;		None
+   281 ;; Return value:  Size  Location     Type
+   282 ;;                  2  100[None  ] int 
+   283 ;; Registers used:
+   284 ;;		wreg, status,2, status,0, cstack
+   285 ;; Tracked objects:
+   286 ;;		On entry : 0/0
+   287 ;;		On exit  : 0/0
+   288 ;;		Unchanged: 0/0
+   289 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   290 ;;      Params:         0       0       0       0       0       0       0       0       0
+   291 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   292 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   293 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   294 ;;Total ram usage:        0 bytes
+   295 ;; Hardware stack levels required when called:    4
+   296 ;; This function calls:
+   297 ;;		_loop
+   298 ;;		_setup
+   299 ;;		_setup_hw
+   300 ;; This function is called by:
+   301 ;;		Startup code after reset
+   302 ;; This function uses a non-reentrant model
+   303 ;;
+   304                           
+   305                           	psect	text0
+   306  00785A                     __ptext0:
+   307                           	opt stack 0
+   308  00785A                     _main:
+   309                           	opt stack 27
+   310                           
+   311                           ;aula1211.c: 166: setup_hw();
+   312                           
+   313                           ;incstack = 0
+   314  00785A  EC3D  F03C         	call	_setup_hw	;wreg free
+   315                           
+   316                           ;aula1211.c: 167: setup();
+   317  00785E  EC84  F03C         	call	_setup	;wreg free
+   318  007862                     l1298:
+   319  007862  EC34  F03C         	call	_loop	;wreg free
+   320  007866  D7FD               	goto	l1298
+   321  007868                     __end_of_main:
+   322                           	opt stack 0
+   323                           tblptru	equ	0xFF8
+   324                           tblptrh	equ	0xFF7
+   325                           tblptrl	equ	0xFF6
+   326                           tablat	equ	0xFF5
+   327                           postinc0	equ	0xFEE
+   328                           wreg	equ	0xFE8
+   329                           postdec1	equ	0xFE5
+   330                           fsr1l	equ	0xFE1
+   331                           
+   332 ;; *************** function _setup_hw *****************
+   333 ;; Defined at:
+   334 ;;		line 115 in file "aula1211.c"
+   335 ;; Parameters:    Size  Location     Type
+   336 ;;		None
+   337 ;; Auto vars:     Size  Location     Type
+   338 ;;		None
+   339 ;; Return value:  Size  Location     Type
+   340 ;;                  1    wreg      void 
+   341 ;; Registers used:
+   342 ;;		wreg, status,2
+   343 ;; Tracked objects:
+   344 ;;		On entry : 0/0
+   345 ;;		On exit  : 0/0
+   346 ;;		Unchanged: 0/0
+   347 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   348 ;;      Params:         0       0       0       0       0       0       0       0       0
+   349 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   350 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   351 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   352 ;;Total ram usage:        0 bytes
+   353 ;; Hardware stack levels used:    1
+   354 ;; This function calls:
+   355 ;;		Nothing
+   356 ;; This function is called by:
+   357 ;;		_main
+   358 ;; This function uses a non-reentrant model
+   359 ;;
+   360                           
+   361                           	psect	text1
+   362  00787A                     __ptext1:
+   363                           	opt stack 0
+   364  00787A                     _setup_hw:
+   365                           	opt stack 30
+   366                           
+   367                           ;aula1211.c: 116: ADCON1 = 15;
+   368                           
+   369                           ;incstack = 0
+   370  00787A  0E0F               	movlw	15
+   371  00787C  6EC1               	movwf	4033,c	;volatile
+   372                           
+   373                           ;aula1211.c: 117: TRISA = 0;
+   374  00787E  0E00               	movlw	0
+   375  007880  6E92               	movwf	3986,c	;volatile
+   376                           
+   377                           ;aula1211.c: 118: TRISB = 0;
+   378  007882  0E00               	movlw	0
+   379  007884  6E93               	movwf	3987,c	;volatile
+   380                           
+   381                           ;aula1211.c: 119: TRISC = 0;
+   382  007886  0E00               	movlw	0
+   383  007888  6E94               	movwf	3988,c	;volatile
+   384                           
+   385                           ;aula1211.c: 120: TRISD = 255;
+   386  00788A  6895               	setf	3989,c	;volatile
+   387  00788C  0012               	return		;funcret
+   388  00788E                     __end_of_setup_hw:
+   389                           	opt stack 0
+   390                           tblptru	equ	0xFF8
+   391                           tblptrh	equ	0xFF7
+   392                           tblptrl	equ	0xFF6
+   393                           tablat	equ	0xFF5
+   394                           postinc0	equ	0xFEE
+   395                           wreg	equ	0xFE8
+   396                           postdec1	equ	0xFE5
+   397                           fsr1l	equ	0xFE1
+   398                           
+   399 ;; *************** function _setup *****************
+   400 ;; Defined at:
+   401 ;;		line 183 in file "aula1211.c"
+   402 ;; Parameters:    Size  Location     Type
+   403 ;;		None
+   404 ;; Auto vars:     Size  Location     Type
+   405 ;;		None
+   406 ;; Return value:  Size  Location     Type
+   407 ;;                  1    wreg      void 
+   408 ;; Registers used:
+   409 ;;		wreg, status,2, status,0, cstack
+   410 ;; Tracked objects:
+   411 ;;		On entry : 0/0
+   412 ;;		On exit  : 0/0
+   413 ;;		Unchanged: 0/0
+   414 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   415 ;;      Params:         0       0       0       0       0       0       0       0       0
+   416 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   417 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   418 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   419 ;;Total ram usage:        0 bytes
+   420 ;; Hardware stack levels used:    1
+   421 ;; Hardware stack levels required when called:    1
+   422 ;; This function calls:
+   423 ;;		_LAT
+   424 ;;		_f_maq_n_primo_c
+   425 ;; This function is called by:
+   426 ;;		_main
+   427 ;; This function uses a non-reentrant model
+   428 ;;
+   429                           
+   430                           	psect	text2
+   431  007908                     __ptext2:
+   432                           	opt stack 0
+   433  007908                     _setup:
+   434                           	opt stack 29
+   435                           
+   436                           ;aula1211.c: 184: max_timer1 = 20;
+   437                           
+   438                           ;incstack = 0
+   439  007908  0E00               	movlw	0
+   440  00790A  6E14               	movwf	_max_timer1+1,c
+   441  00790C  0E14               	movlw	20
+   442  00790E  6E13               	movwf	_max_timer1,c
+   443                           
+   444                           ;aula1211.c: 185: max_timer2 = 50;
+   445  007910  0E00               	movlw	0
+   446  007912  6E12               	movwf	_max_timer2+1,c
+   447  007914  0E32               	movlw	50
+   448  007916  6E11               	movwf	_max_timer2,c
+   449                           
+   450                           ;aula1211.c: 187: seq=0;
+   451  007918  0E00               	movlw	0
+   452  00791A  6E0D               	movwf	_seq,c
+   453                           
+   454                           ;aula1211.c: 188: dir=0;
+   455  00791C  0E00               	movlw	0
+   456  00791E  6E0C               	movwf	_dir,c
+   457                           
+   458                           ;aula1211.c: 189: acelera=0;
+   459  007920  0E00               	movlw	0
+   460  007922  6E09               	movwf	_acelera,c
+   461                           
+   462                           ;aula1211.c: 191: LAT(10, 0x3f);
+   463  007924  0E3F               	movlw	63
+   464  007926  6E19               	movwf	LAT@dado,c
+   465  007928  0E0A               	movlw	10
+   466  00792A  EC52  F03C         	call	_LAT
+   467                           
+   468                           ;aula1211.c: 192: LAT(20, 0x3f);
+   469  00792E  0E3F               	movlw	63
+   470  007930  6E19               	movwf	LAT@dado,c
+   471  007932  0E14               	movlw	20
+   472  007934  EC52  F03C         	call	_LAT
+   473                           
+   474                           ;aula1211.c: 193: LAT(30, 0b00000000);
+   475  007938  0E00               	movlw	0
+   476  00793A  6E19               	movwf	LAT@dado,c
+   477  00793C  0E1E               	movlw	30
+   478  00793E  EC52  F03C         	call	_LAT
+   479                           
+   480                           ;aula1211.c: 194: estado = f_maq_n_primo_c(estado);
+   481  007942  5018               	movf	_estado,w,c
+   482  007944  EC55  F03F         	call	_f_maq_n_primo_c
+   483  007948  6E18               	movwf	_estado,c
+   484  00794A  0012               	return		;funcret
+   485  00794C                     __end_of_setup:
+   486                           	opt stack 0
+   487                           tblptru	equ	0xFF8
+   488                           tblptrh	equ	0xFF7
+   489                           tblptrl	equ	0xFF6
+   490                           tablat	equ	0xFF5
+   491                           postinc0	equ	0xFEE
+   492                           wreg	equ	0xFE8
+   493                           postdec1	equ	0xFE5
+   494                           fsr1l	equ	0xFE1
+   495                           
+   496 ;; *************** function _loop *****************
+   497 ;; Defined at:
+   498 ;;		line 197 in file "aula1211.c"
+   499 ;; Parameters:    Size  Location     Type
+   500 ;;		None
+   501 ;; Auto vars:     Size  Location     Type
+   502 ;;		None
+   503 ;; Return value:  Size  Location     Type
+   504 ;;                  1    wreg      void 
+   505 ;; Registers used:
+   506 ;;		wreg, status,2, status,0, cstack
+   507 ;; Tracked objects:
+   508 ;;		On entry : 0/0
+   509 ;;		On exit  : 0/0
+   510 ;;		Unchanged: 0/0
+   511 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   512 ;;      Params:         0       0       0       0       0       0       0       0       0
+   513 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   514 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   515 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   516 ;;Total ram usage:        0 bytes
+   517 ;; Hardware stack levels used:    1
+   518 ;; Hardware stack levels required when called:    3
+   519 ;; This function calls:
+   520 ;;		_f_timers
+   521 ;;		_usleep
+   522 ;; This function is called by:
+   523 ;;		_main
+   524 ;; This function uses a non-reentrant model
+   525 ;;
+   526                           
+   527                           	psect	text3
+   528  007868                     __ptext3:
+   529                           	opt stack 0
+   530  007868                     _loop:
+   531                           	opt stack 27
+   532                           
+   533                           ;aula1211.c: 199: f_timers();
+   534                           
+   535                           ;incstack = 0
+   536  007868  ECA6  F03C         	call	_f_timers	;wreg free
+   537                           
+   538                           ;aula1211.c: 200: usleep(1000);
+   539  00786C  0E03               	movlw	3
+   540  00786E  6E1A               	movwf	usleep@tempo+1,c
+   541  007870  0EE8               	movlw	232
+   542  007872  6E19               	movwf	usleep@tempo,c
+   543  007874  EC28  F03C         	call	_usleep	;wreg free
+   544  007878  0012               	return		;funcret
+   545  00787A                     __end_of_loop:
+   546                           	opt stack 0
+   547                           tblptru	equ	0xFF8
+   548                           tblptrh	equ	0xFF7
+   549                           tblptrl	equ	0xFF6
+   550                           tablat	equ	0xFF5
+   551                           postinc0	equ	0xFEE
+   552                           wreg	equ	0xFE8
+   553                           postdec1	equ	0xFE5
+   554                           fsr1l	equ	0xFE1
+   555                           
+   556 ;; *************** function _usleep *****************
+   557 ;; Defined at:
+   558 ;;		line 92 in file "aula1211.c"
+   559 ;; Parameters:    Size  Location     Type
+   560 ;;  tempo           2    0[COMRAM] unsigned int 
+   561 ;; Auto vars:     Size  Location     Type
+   562 ;;		None
+   563 ;; Return value:  Size  Location     Type
+   564 ;;                  1    wreg      void 
+   565 ;; Registers used:
+   566 ;;		wreg
+   567 ;; Tracked objects:
+   568 ;;		On entry : 0/0
+   569 ;;		On exit  : 0/0
+   570 ;;		Unchanged: 0/0
+   571 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   572 ;;      Params:         2       0       0       0       0       0       0       0       0
+   573 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   574 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   575 ;;      Totals:         2       0       0       0       0       0       0       0       0
+   576 ;;Total ram usage:        2 bytes
+   577 ;; Hardware stack levels used:    1
+   578 ;; This function calls:
+   579 ;;		Nothing
+   580 ;; This function is called by:
+   581 ;;		_loop
+   582 ;; This function uses a non-reentrant model
+   583 ;;
+   584                           
+   585                           	psect	text4
+   586  007850                     __ptext4:
+   587                           	opt stack 0
+   588  007850                     _usleep:
+   589                           	opt stack 29
+   590                           
+   591                           ;aula1211.c: 94: _delay((unsigned long)((1000)*(4000000/4000000.0)));
+   592                           
+   593                           ;incstack = 0
+   594  007850  0EC8               	movlw	200
+   595  007852                     u477:
+   596  007852  D000               	nop2	
+   597  007854  2EE8               	decfsz	wreg,f,c
+   598  007856  D7FD               	bra	u477
+   599  007858  0012               	return		;funcret
+   600  00785A                     __end_of_usleep:
+   601                           	opt stack 0
+   602                           tblptru	equ	0xFF8
+   603                           tblptrh	equ	0xFF7
+   604                           tblptrl	equ	0xFF6
+   605                           tablat	equ	0xFF5
+   606                           postinc0	equ	0xFEE
+   607                           wreg	equ	0xFE8
+   608                           postdec1	equ	0xFE5
+   609                           fsr1l	equ	0xFE1
+   610                           
+   611 ;; *************** function _f_timers *****************
+   612 ;; Defined at:
+   613 ;;		line 205 in file "aula1211.c"
+   614 ;; Parameters:    Size  Location     Type
+   615 ;;		None
+   616 ;; Auto vars:     Size  Location     Type
+   617 ;;		None
+   618 ;; Return value:  Size  Location     Type
+   619 ;;                  1    wreg      void 
+   620 ;; Registers used:
+   621 ;;		wreg, status,2, status,0, cstack
+   622 ;; Tracked objects:
+   623 ;;		On entry : 0/0
+   624 ;;		On exit  : 0/0
+   625 ;;		Unchanged: 0/0
+   626 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   627 ;;      Params:         0       0       0       0       0       0       0       0       0
+   628 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   629 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   630 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   631 ;;Total ram usage:        0 bytes
+   632 ;; Hardware stack levels used:    1
+   633 ;; Hardware stack levels required when called:    2
+   634 ;; This function calls:
+   635 ;;		_f_timer1
+   636 ;;		_f_timer2
+   637 ;;		_f_timer3
+   638 ;; This function is called by:
+   639 ;;		_loop
+   640 ;; This function uses a non-reentrant model
+   641 ;;
+   642                           
+   643                           	psect	text5
+   644  00794C                     __ptext5:
+   645                           	opt stack 0
+   646  00794C                     _f_timers:
+   647                           	opt stack 27
+   648                           
+   649                           ;aula1211.c: 207: static unsigned int c_timer1=0, c_timer2=0, c_timer3=0;
+   650                           ;aula1211.c: 209: if (c_timer1<max_timer1) {
+   651                           
+   652                           ;incstack = 0
+   653  00794C  5013               	movf	_max_timer1,w,c
+   654  00794E  5C05               	subwf	f_timers@c_timer1,w,c
+   655  007950  5014               	movf	_max_timer1+1,w,c
+   656  007952  5806               	subwfb	f_timers@c_timer1+1,w,c
+   657  007954  B0D8               	btfsc	status,0,c
+   658  007956  D003               	goto	l1260
+   659                           
+   660                           ;aula1211.c: 210: c_timer1++;
+   661  007958  4A05               	infsnz	f_timers@c_timer1,f,c
+   662  00795A  2A06               	incf	f_timers@c_timer1+1,f,c
+   663                           
+   664                           ;aula1211.c: 211: }
+   665  00795C  D006               	goto	l1264
+   666  00795E                     l1260:
+   667                           
+   668                           ;aula1211.c: 212: else {
+   669                           ;aula1211.c: 213: c_timer1=0;
+   670  00795E  0E00               	movlw	0
+   671  007960  6E06               	movwf	f_timers@c_timer1+1,c
+   672  007962  0E00               	movlw	0
+   673  007964  6E05               	movwf	f_timers@c_timer1,c
+   674                           
+   675                           ;aula1211.c: 214: f_timer1();
+   676  007966  EC47  F03C         	call	_f_timer1	;wreg free
+   677  00796A                     l1264:
+   678                           
+   679                           ;aula1211.c: 215: }
+   680                           ;aula1211.c: 217: if (c_timer2<max_timer2) {
+   681  00796A  5011               	movf	_max_timer2,w,c
+   682  00796C  5C03               	subwf	f_timers@c_timer2,w,c
+   683  00796E  5012               	movf	_max_timer2+1,w,c
+   684  007970  5804               	subwfb	f_timers@c_timer2+1,w,c
+   685  007972  B0D8               	btfsc	status,0,c
+   686  007974  D003               	goto	l1268
+   687                           
+   688                           ;aula1211.c: 218: c_timer2++;
+   689  007976  4A03               	infsnz	f_timers@c_timer2,f,c
+   690  007978  2A04               	incf	f_timers@c_timer2+1,f,c
+   691                           
+   692                           ;aula1211.c: 219: }
+   693  00797A  D006               	goto	l1272
+   694  00797C                     l1268:
+   695                           
+   696                           ;aula1211.c: 220: else {
+   697                           ;aula1211.c: 221: c_timer2=0;
+   698  00797C  0E00               	movlw	0
+   699  00797E  6E04               	movwf	f_timers@c_timer2+1,c
+   700  007980  0E00               	movlw	0
+   701  007982  6E03               	movwf	f_timers@c_timer2,c
+   702                           
+   703                           ;aula1211.c: 222: f_timer2();
+   704  007984  EC11  F03D         	call	_f_timer2	;wreg free
+   705  007988                     l1272:
+   706                           
+   707                           ;aula1211.c: 223: }
+   708                           ;aula1211.c: 225: if (c_timer3<max_timer3) {
+   709  007988  5007               	movf	_max_timer3,w,c
+   710  00798A  5C01               	subwf	f_timers@c_timer3,w,c
+   711  00798C  5008               	movf	_max_timer3+1,w,c
+   712  00798E  5802               	subwfb	f_timers@c_timer3+1,w,c
+   713  007990  B0D8               	btfsc	status,0,c
+   714  007992  D003               	goto	l1276
+   715                           
+   716                           ;aula1211.c: 226: c_timer3++;
+   717  007994  4A01               	infsnz	f_timers@c_timer3,f,c
+   718  007996  2A02               	incf	f_timers@c_timer3+1,f,c
+   719                           
+   720                           ;aula1211.c: 227: }
+   721  007998  0012               	return	
+   722  00799A                     l1276:
+   723                           
+   724                           ;aula1211.c: 228: else {
+   725                           ;aula1211.c: 229: c_timer3=0;
+   726  00799A  0E00               	movlw	0
+   727  00799C  6E02               	movwf	f_timers@c_timer3+1,c
+   728  00799E  0E00               	movlw	0
+   729  0079A0  6E01               	movwf	f_timers@c_timer3,c
+   730                           
+   731                           ;aula1211.c: 230: f_timer3();
+   732  0079A2  ECD4  F03C         	call	_f_timer3	;wreg free
+   733  0079A6  0012               	return	
+   734  0079A8                     __end_of_f_timers:
+   735                           	opt stack 0
+   736                           tblptru	equ	0xFF8
+   737                           tblptrh	equ	0xFF7
+   738                           tblptrl	equ	0xFF6
+   739                           tablat	equ	0xFF5
+   740                           postinc0	equ	0xFEE
+   741                           wreg	equ	0xFE8
+   742                           postdec1	equ	0xFE5
+   743                           fsr1l	equ	0xFE1
+   744                           status	equ	0xFD8
+   745                           
+   746 ;; *************** function _f_timer3 *****************
+   747 ;; Defined at:
+   748 ;;		line 277 in file "aula1211.c"
+   749 ;; Parameters:    Size  Location     Type
+   750 ;;		None
+   751 ;; Auto vars:     Size  Location     Type
+   752 ;;		None
+   753 ;; Return value:  Size  Location     Type
+   754 ;;                  1    wreg      void 
+   755 ;; Registers used:
+   756 ;;		wreg, status,2, status,0, cstack
+   757 ;; Tracked objects:
+   758 ;;		On entry : 0/0
+   759 ;;		On exit  : 0/0
+   760 ;;		Unchanged: 0/0
+   761 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   762 ;;      Params:         0       0       0       0       0       0       0       0       0
+   763 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   764 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   765 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   766 ;;Total ram usage:        0 bytes
+   767 ;; Hardware stack levels used:    1
+   768 ;; Hardware stack levels required when called:    1
+   769 ;; This function calls:
+   770 ;;		_LAT
+   771 ;;		_f_maq_n_3_c
+   772 ;;		_f_maq_n_3_d
+   773 ;;		_f_maq_n_primo_c
+   774 ;;		_f_maq_n_primo_d
+   775 ;; This function is called by:
+   776 ;;		_f_timers
+   777 ;; This function uses a non-reentrant model
+   778 ;;
+   779                           
+   780                           	psect	text6
+   781  0079A8                     __ptext6:
+   782                           	opt stack 0
+   783  0079A8                     _f_timer3:
+   784                           	opt stack 27
+   785                           
+   786                           ;aula1211.c: 279: if((seq==0) & (dir==0)){
+   787                           
+   788                           ;incstack = 0
+   789  0079A8  500D               	movf	_seq,w,c
+   790  0079AA  A4D8               	btfss	status,2,c
+   791  0079AC  D00C               	goto	l1236
+   792  0079AE  500C               	movf	_dir,w,c
+   793  0079B0  A4D8               	btfss	status,2,c
+   794  0079B2  D009               	goto	l1236
+   795                           
+   796                           ;aula1211.c: 280: estado = f_maq_n_primo_c(estado);
+   797  0079B4  5018               	movf	_estado,w,c
+   798  0079B6  EC55  F03F         	call	_f_maq_n_primo_c
+   799  0079BA  6E18               	movwf	_estado,c
+   800                           
+   801                           ;aula1211.c: 281: LAT(30, 0b00000000);
+   802  0079BC  0E00               	movlw	0
+   803  0079BE  6E19               	movwf	LAT@dado,c
+   804  0079C0  0E1E               	movlw	30
+   805  0079C2  EC52  F03C         	call	_LAT
+   806  0079C6                     l1236:
+   807                           
+   808                           ;aula1211.c: 282: }
+   809                           ;aula1211.c: 283: if((seq==1) & (dir==0)){
+   810  0079C6  040D               	decf	_seq,w,c
+   811  0079C8  A4D8               	btfss	status,2,c
+   812  0079CA  D00C               	goto	l1242
+   813  0079CC  500C               	movf	_dir,w,c
+   814  0079CE  A4D8               	btfss	status,2,c
+   815  0079D0  D009               	goto	l1242
+   816                           
+   817                           ;aula1211.c: 284: estado = f_maq_n_3_c(estado);
+   818  0079D2  5018               	movf	_estado,w,c
+   819  0079D4  EC61  F03D         	call	_f_maq_n_3_c
+   820  0079D8  6E18               	movwf	_estado,c
+   821                           
+   822                           ;aula1211.c: 285: LAT(30, 0b11110000);
+   823  0079DA  0EF0               	movlw	240
+   824  0079DC  6E19               	movwf	LAT@dado,c
+   825  0079DE  0E1E               	movlw	30
+   826  0079E0  EC52  F03C         	call	_LAT
+   827  0079E4                     l1242:
+   828                           
+   829                           ;aula1211.c: 286: }
+   830                           ;aula1211.c: 287: if((seq==0) & (dir==1)){
+   831  0079E4  500D               	movf	_seq,w,c
+   832  0079E6  A4D8               	btfss	status,2,c
+   833  0079E8  D00C               	goto	l1248
+   834  0079EA  040C               	decf	_dir,w,c
+   835  0079EC  A4D8               	btfss	status,2,c
+   836  0079EE  D009               	goto	l1248
+   837                           
+   838                           ;aula1211.c: 288: estado = f_maq_n_primo_d(estado);
+   839  0079F0  5018               	movf	_estado,w,c
+   840  0079F2  EC07  F03E         	call	_f_maq_n_primo_d
+   841  0079F6  6E18               	movwf	_estado,c
+   842                           
+   843                           ;aula1211.c: 289: LAT(30, 0b00001111);
+   844  0079F8  0E0F               	movlw	15
+   845  0079FA  6E19               	movwf	LAT@dado,c
+   846  0079FC  0E1E               	movlw	30
+   847  0079FE  EC52  F03C         	call	_LAT
+   848  007A02                     l1248:
+   849                           
+   850                           ;aula1211.c: 290: }
+   851                           ;aula1211.c: 291: if((seq==1) & (dir==1)){
+   852  007A02  040D               	decf	_seq,w,c
+   853  007A04  A4D8               	btfss	status,2,c
+   854  007A06  0012               	return	
+   855  007A08  040C               	decf	_dir,w,c
+   856  007A0A  A4D8               	btfss	status,2,c
+   857  007A0C  0012               	return	
+   858                           
+   859                           ;aula1211.c: 292: estado = f_maq_n_3_d(estado);
+   860  007A0E  5018               	movf	_estado,w,c
+   861  007A10  ECAD  F03E         	call	_f_maq_n_3_d
+   862  007A14  6E18               	movwf	_estado,c
+   863                           
+   864                           ;aula1211.c: 293: LAT(30, 0b11111111);
+   865  007A16  0EFF               	movlw	255
+   866  007A18  6E19               	movwf	LAT@dado,c
+   867  007A1A  0E1E               	movlw	30
+   868  007A1C  EC52  F03C         	call	_LAT
+   869  007A20  0012               	return	
+   870  007A22                     __end_of_f_timer3:
+   871                           	opt stack 0
+   872                           tblptru	equ	0xFF8
+   873                           tblptrh	equ	0xFF7
+   874                           tblptrl	equ	0xFF6
+   875                           tablat	equ	0xFF5
+   876                           postinc0	equ	0xFEE
+   877                           wreg	equ	0xFE8
+   878                           postdec1	equ	0xFE5
+   879                           fsr1l	equ	0xFE1
+   880                           status	equ	0xFD8
+   881                           
+   882 ;; *************** function _f_maq_n_primo_d *****************
+   883 ;; Defined at:
+   884 ;;		line 572 in file "aula1211.c"
+   885 ;; Parameters:    Size  Location     Type
+   886 ;;  atual           1    wreg     unsigned char 
+   887 ;; Auto vars:     Size  Location     Type
+   888 ;;  atual           1    0[COMRAM] unsigned char 
+   889 ;;  prox            1    1[COMRAM] unsigned char 
+   890 ;; Return value:  Size  Location     Type
+   891 ;;                  1    wreg      unsigned char 
+   892 ;; Registers used:
+   893 ;;		wreg, status,2, status,0
+   894 ;; Tracked objects:
+   895 ;;		On entry : 0/0
+   896 ;;		On exit  : 0/0
+   897 ;;		Unchanged: 0/0
+   898 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   899 ;;      Params:         0       0       0       0       0       0       0       0       0
+   900 ;;      Locals:         2       0       0       0       0       0       0       0       0
+   901 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   902 ;;      Totals:         2       0       0       0       0       0       0       0       0
+   903 ;;Total ram usage:        2 bytes
+   904 ;; Hardware stack levels used:    1
+   905 ;; This function calls:
+   906 ;;		Nothing
+   907 ;; This function is called by:
+   908 ;;		_f_timer3
+   909 ;; This function uses a non-reentrant model
+   910 ;;
+   911                           
+   912                           	psect	text7
+   913  007C0E                     __ptext7:
+   914                           	opt stack 0
+   915  007C0E                     _f_maq_n_primo_d:
+   916                           	opt stack 27
+   917                           
+   918                           ;incstack = 0
+   919                           ;f_maq_n_primo_d@atual stored from wreg
+   920  007C0E  6E19               	movwf	f_maq_n_primo_d@atual,c
+   921                           
+   922                           ;aula1211.c: 573: unsigned char prox;
+   923                           ;aula1211.c: 574: switch(atual){
+   924  007C10  D064               	goto	l1016
+   925  007C12                     l972:
+   926                           
+   927                           ;aula1211.c: 576: prox = 28;
+   928  007C12  0E1C               	movlw	28
+   929  007C14  6E1A               	movwf	f_maq_n_primo_d@prox,c
+   930                           
+   931                           ;aula1211.c: 577: dd = 0x5b;
+   932  007C16  0E5B               	movlw	91
+   933  007C18  6E0B               	movwf	_dd,c
+   934                           
+   935                           ;aula1211.c: 578: du = 0x7f;
+   936  007C1A  0E7F               	movlw	127
+   937  007C1C  D058               	goto	L19
+   938  007C1E                     l974:
+   939                           
+   940                           ;aula1211.c: 582: prox = 27;
+   941  007C1E  0E1B               	movlw	27
+   942  007C20  6E1A               	movwf	f_maq_n_primo_d@prox,c
+   943                           
+   944                           ;aula1211.c: 583: dd = 0x5b;
+   945  007C22  0E5B               	movlw	91
+   946  007C24  6E0B               	movwf	_dd,c
+   947                           
+   948                           ;aula1211.c: 584: du = 0x07;
+   949  007C26  0E07               	movlw	7
+   950  007C28  D052               	goto	L19
+   951  007C2A                     l976:
+   952                           
+   953                           ;aula1211.c: 588: prox = 26;
+   954  007C2A  0E1A               	movlw	26
+   955  007C2C  6E1A               	movwf	f_maq_n_primo_d@prox,c
+   956                           
+   957                           ;aula1211.c: 589: dd = 0x5b;
+   958  007C2E  0E5B               	movlw	91
+   959  007C30  6E0B               	movwf	_dd,c
+   960                           
+   961                           ;aula1211.c: 590: du = 0x7d;
+   962  007C32  0E7D               	movlw	125
+   963  007C34  D04C               	goto	L19
+   964  007C36                     l978:
+   965                           
+   966                           ;aula1211.c: 594: prox = 25;
+   967  007C36  0E19               	movlw	25
+   968  007C38  6E1A               	movwf	f_maq_n_primo_d@prox,c
+   969                           
+   970                           ;aula1211.c: 595: dd = 0x5b;
+   971  007C3A  0E5B               	movlw	91
+   972  007C3C  D023               	goto	L28
+   973  007C3E                     l980:
+   974                           
+   975                           ;aula1211.c: 600: prox = 24;
+   976  007C3E  0E18               	movlw	24
+   977  007C40  6E1A               	movwf	f_maq_n_primo_d@prox,c
+   978                           
+   979                           ;aula1211.c: 601: dd = 0x5b;
+   980  007C42  0E5B               	movlw	91
+   981  007C44  6E0B               	movwf	_dd,c
+   982                           
+   983                           ;aula1211.c: 602: du = 0x66;
+   984  007C46  0E66               	movlw	102
+   985  007C48  D042               	goto	L19
+   986  007C4A                     l982:
+   987                           
+   988                           ;aula1211.c: 606: prox = 22;
+   989  007C4A  0E16               	movlw	22
+   990  007C4C  6E1A               	movwf	f_maq_n_primo_d@prox,c
+   991                           
+   992                           ;aula1211.c: 607: dd = 0x5b;
+   993  007C4E  0E5B               	movlw	91
+   994  007C50  6E0B               	movwf	_dd,c
+   995                           
+   996                           ;aula1211.c: 608: du = 0x5b;
+   997  007C52  0E5B               	movlw	91
+   998  007C54  D03C               	goto	L19
+   999  007C56                     l984:
+  1000                           
+  1001                           ;aula1211.c: 612: prox = 21;
+  1002  007C56  0E15               	movlw	21
+  1003  007C58  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1004                           
+  1005                           ;aula1211.c: 613: dd = 0x5b;
+  1006  007C5A  0E5B               	movlw	91
+  1007  007C5C  6E0B               	movwf	_dd,c
+  1008                           
+  1009                           ;aula1211.c: 614: du = 0x06;
+  1010  007C5E  0E06               	movlw	6
+  1011  007C60  D036               	goto	L19
+  1012  007C62                     l986:
+  1013                           
+  1014                           ;aula1211.c: 618: prox = 20;
+  1015  007C62  0E14               	movlw	20
+  1016  007C64  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1017                           
+  1018                           ;aula1211.c: 619: dd = 0x5b;
+  1019  007C66  0E5B               	movlw	91
+  1020  007C68  6E0B               	movwf	_dd,c
+  1021                           
+  1022                           ;aula1211.c: 620: du = 0x3f;
+  1023  007C6A  0E3F               	movlw	63
+  1024  007C6C  D030               	goto	L19
+  1025  007C6E                     l988:
+  1026                           
+  1027                           ;aula1211.c: 624: prox = 18;
+  1028  007C6E  0E12               	movlw	18
+  1029  007C70  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1030                           
+  1031                           ;aula1211.c: 625: dd = 0x06;
+  1032  007C72  0E06               	movlw	6
+  1033  007C74  D7D1               	goto	L29
+  1034  007C76                     l990:
+  1035                           
+  1036                           ;aula1211.c: 630: prox = 16;
+  1037  007C76  0E10               	movlw	16
+  1038  007C78  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1039                           
+  1040                           ;aula1211.c: 631: dd = 0x06;
+  1041  007C7A  0E06               	movlw	6
+  1042  007C7C  D7D9               	goto	L30
+  1043  007C7E                     l992:
+  1044                           
+  1045                           ;aula1211.c: 636: prox = 15;
+  1046  007C7E  0E0F               	movlw	15
+  1047  007C80  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1048                           
+  1049                           ;aula1211.c: 637: dd = 0x06;
+  1050  007C82  0E06               	movlw	6
+  1051  007C84                     L28:
+  1052  007C84  6E0B               	movwf	_dd,c
+  1053                           
+  1054                           ;aula1211.c: 638: du = 0x6d;
+  1055  007C86  0E6D               	movlw	109
+  1056  007C88  D022               	goto	L19
+  1057  007C8A                     l994:
+  1058                           
+  1059                           ;aula1211.c: 642: prox = 14;
+  1060  007C8A  0E0E               	movlw	14
+  1061  007C8C  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1062                           
+  1063                           ;aula1211.c: 643: dd = 0x06;
+  1064  007C8E  0E06               	movlw	6
+  1065  007C90  D7D9               	goto	L22
+  1066  007C92                     l996:
+  1067                           
+  1068                           ;aula1211.c: 648: prox = 12;
+  1069  007C92  0E0C               	movlw	12
+  1070  007C94  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1071                           
+  1072                           ;aula1211.c: 649: dd = 0x06;
+  1073  007C96  0E06               	movlw	6
+  1074  007C98  D7DB               	goto	L23
+  1075  007C9A                     l998:
+  1076                           
+  1077                           ;aula1211.c: 654: prox = 10;
+  1078  007C9A  0E0A               	movlw	10
+  1079  007C9C  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1080                           
+  1081                           ;aula1211.c: 655: dd = 0x06;
+  1082  007C9E  0E06               	movlw	6
+  1083  007CA0  D7E3               	goto	L24
+  1084  007CA2                     l1000:
+  1085                           
+  1086                           ;aula1211.c: 660: prox = 9;
+  1087  007CA2  0E09               	movlw	9
+  1088  007CA4  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1089                           
+  1090                           ;aula1211.c: 661: dd = 0x00;
+  1091  007CA6  0E00               	movlw	0
+  1092  007CA8  6E0B               	movwf	_dd,c
+  1093                           
+  1094                           ;aula1211.c: 662: du = 0x6f;
+  1095  007CAA  0E6F               	movlw	111
+  1096  007CAC  D010               	goto	L19
+  1097  007CAE                     l1002:
+  1098                           
+  1099                           ;aula1211.c: 666: prox = 8;
+  1100  007CAE  0E08               	movlw	8
+  1101  007CB0  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1102                           
+  1103                           ;aula1211.c: 667: dd = 0x00;
+  1104  007CB2  0E00               	movlw	0
+  1105  007CB4  D7B1               	goto	L29
+  1106  007CB6                     l1004:
+  1107                           
+  1108                           ;aula1211.c: 672: prox = 6;
+  1109  007CB6  0E06               	movlw	6
+  1110  007CB8  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1111                           
+  1112                           ;aula1211.c: 673: dd = 0x00;
+  1113  007CBA  0E00               	movlw	0
+  1114  007CBC  D7B9               	goto	L30
+  1115  007CBE                     l1006:
+  1116                           
+  1117                           ;aula1211.c: 678: prox = 4;
+  1118  007CBE  0E04               	movlw	4
+  1119  007CC0  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1120                           
+  1121                           ;aula1211.c: 679: dd = 0x00;
+  1122  007CC2  0E00               	movlw	0
+  1123  007CC4  D7BF               	goto	L22
+  1124  007CC6                     l1008:
+  1125                           
+  1126                           ;aula1211.c: 684: prox = 1;
+  1127  007CC6  0E01               	movlw	1
+  1128  007CC8  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1129                           
+  1130                           ;aula1211.c: 685: dd = 0x00;
+  1131  007CCA  0E00               	movlw	0
+  1132  007CCC  D7C7               	goto	L27
+  1133  007CCE                     L19:
+  1134  007CCE  6E0A               	movwf	_du,c
+  1135                           
+  1136                           ;aula1211.c: 693: break;
+  1137  007CD0  D042               	goto	l215
+  1138  007CD2                     l1012:
+  1139                           
+  1140                           ;aula1211.c: 696: prox = 30;
+  1141  007CD2  0E1E               	movlw	30
+  1142  007CD4  6E1A               	movwf	f_maq_n_primo_d@prox,c
+  1143                           
+  1144                           ;aula1211.c: 697: dd = 0x4f;
+  1145  007CD6  0E4F               	movlw	79
+  1146  007CD8  D7C7               	goto	L24
+  1147  007CDA                     l1016:
+  1148  007CDA  5019               	movf	f_maq_n_primo_d@atual,w,c
+  1149                           
+  1150                           ; Switch size 1, requested type "space"
+  1151                           ; Number of cases is 20, Range of values is 1 to 30
+  1152                           ; switch strategies available:
+  1153                           ; Name         Instructions Cycles
+  1154                           ; simple_byte           61    31 (average)
+  1155                           ;	Chosen strategy is simple_byte
+  1156  007CDC  0A01               	xorlw	1	; case 1
+  1157  007CDE  B4D8               	btfsc	status,2,c
+  1158  007CE0  D7F8               	goto	l1012
+  1159  007CE2  0A05               	xorlw	5	; case 4
+  1160  007CE4  B4D8               	btfsc	status,2,c
+  1161  007CE6  D7EF               	goto	l1008
+  1162  007CE8  0A02               	xorlw	2	; case 6
+  1163  007CEA  B4D8               	btfsc	status,2,c
+  1164  007CEC  D7E8               	goto	l1006
+  1165  007CEE  0A0E               	xorlw	14	; case 8
+  1166  007CF0  B4D8               	btfsc	status,2,c
+  1167  007CF2  D7E1               	goto	l1004
+  1168  007CF4  0A01               	xorlw	1	; case 9
+  1169  007CF6  B4D8               	btfsc	status,2,c
+  1170  007CF8  D7DA               	goto	l1002
+  1171  007CFA  0A03               	xorlw	3	; case 10
+  1172  007CFC  B4D8               	btfsc	status,2,c
+  1173  007CFE  D7D1               	goto	l1000
+  1174  007D00  0A06               	xorlw	6	; case 12
+  1175  007D02  B4D8               	btfsc	status,2,c
+  1176  007D04  D7CA               	goto	l998
+  1177  007D06  0A02               	xorlw	2	; case 14
+  1178  007D08  B4D8               	btfsc	status,2,c
+  1179  007D0A  D7C3               	goto	l996
+  1180  007D0C  0A01               	xorlw	1	; case 15
+  1181  007D0E  B4D8               	btfsc	status,2,c
+  1182  007D10  D7BC               	goto	l994
+  1183  007D12  0A1F               	xorlw	31	; case 16
+  1184  007D14  B4D8               	btfsc	status,2,c
+  1185  007D16  D7B3               	goto	l992
+  1186  007D18  0A02               	xorlw	2	; case 18
+  1187  007D1A  B4D8               	btfsc	status,2,c
+  1188  007D1C  D7AC               	goto	l990
+  1189  007D1E  0A06               	xorlw	6	; case 20
+  1190  007D20  B4D8               	btfsc	status,2,c
+  1191  007D22  D7A5               	goto	l988
+  1192  007D24  0A01               	xorlw	1	; case 21
+  1193  007D26  B4D8               	btfsc	status,2,c
+  1194  007D28  D79C               	goto	l986
+  1195  007D2A  0A03               	xorlw	3	; case 22
+  1196  007D2C  B4D8               	btfsc	status,2,c
+  1197  007D2E  D793               	goto	l984
+  1198  007D30  0A0E               	xorlw	14	; case 24
+  1199  007D32  B4D8               	btfsc	status,2,c
+  1200  007D34  D78A               	goto	l982
+  1201  007D36  0A01               	xorlw	1	; case 25
+  1202  007D38  B4D8               	btfsc	status,2,c
+  1203  007D3A  D781               	goto	l980
+  1204  007D3C  0A03               	xorlw	3	; case 26
+  1205  007D3E  B4D8               	btfsc	status,2,c
+  1206  007D40  D77A               	goto	l978
+  1207  007D42  0A01               	xorlw	1	; case 27
+  1208  007D44  B4D8               	btfsc	status,2,c
+  1209  007D46  D771               	goto	l976
+  1210  007D48  0A07               	xorlw	7	; case 28
+  1211  007D4A  B4D8               	btfsc	status,2,c
+  1212  007D4C  D768               	goto	l974
+  1213  007D4E  0A02               	xorlw	2	; case 30
+  1214  007D50  B4D8               	btfsc	status,2,c
+  1215  007D52  D75F               	goto	l972
+  1216  007D54  D7BE               	goto	l1012
+  1217  007D56                     l215:
+  1218                           
+  1219                           ;aula1211.c: 701: return prox;
+  1220  007D56  501A               	movf	f_maq_n_primo_d@prox,w,c
+  1221  007D58  0012               	return		;funcret
+  1222  007D5A                     __end_of_f_maq_n_primo_d:
+  1223                           	opt stack 0
+  1224                           tblptru	equ	0xFF8
+  1225                           tblptrh	equ	0xFF7
+  1226                           tblptrl	equ	0xFF6
+  1227                           tablat	equ	0xFF5
+  1228                           postinc0	equ	0xFEE
+  1229                           wreg	equ	0xFE8
+  1230                           postdec1	equ	0xFE5
+  1231                           fsr1l	equ	0xFE1
+  1232                           status	equ	0xFD8
+  1233                           
+  1234 ;; *************** function _f_maq_n_primo_c *****************
+  1235 ;; Defined at:
+  1236 ;;		line 432 in file "aula1211.c"
+  1237 ;; Parameters:    Size  Location     Type
+  1238 ;;  atual           1    wreg     unsigned char 
+  1239 ;; Auto vars:     Size  Location     Type
+  1240 ;;  atual           1    0[COMRAM] unsigned char 
+  1241 ;;  prox            1    1[COMRAM] unsigned char 
+  1242 ;; Return value:  Size  Location     Type
+  1243 ;;                  1    wreg      unsigned char 
+  1244 ;; Registers used:
+  1245 ;;		wreg, status,2, status,0
+  1246 ;; Tracked objects:
+  1247 ;;		On entry : 0/0
+  1248 ;;		On exit  : 0/0
+  1249 ;;		Unchanged: 0/0
+  1250 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1251 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1252 ;;      Locals:         2       0       0       0       0       0       0       0       0
+  1253 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1254 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1255 ;;Total ram usage:        2 bytes
+  1256 ;; Hardware stack levels used:    1
+  1257 ;; This function calls:
+  1258 ;;		Nothing
+  1259 ;; This function is called by:
+  1260 ;;		_setup
+  1261 ;;		_f_timer3
+  1262 ;; This function uses a non-reentrant model
+  1263 ;;
+  1264                           
+  1265                           	psect	text8
+  1266  007EAA                     __ptext8:
+  1267                           	opt stack 0
+  1268  007EAA                     _f_maq_n_primo_c:
+  1269                           	opt stack 29
+  1270                           
+  1271                           ;incstack = 0
+  1272                           ;f_maq_n_primo_c@atual stored from wreg
+  1273  007EAA  6E19               	movwf	f_maq_n_primo_c@atual,c
+  1274                           
+  1275                           ;aula1211.c: 434: unsigned char prox;
+  1276                           ;aula1211.c: 436: switch (atual) {
+  1277  007EAC  D068               	goto	l922
+  1278  007EAE                     l878:
+  1279                           
+  1280                           ;aula1211.c: 439: prox = 1;
+  1281  007EAE  0E01               	movlw	1
+  1282  007EB0  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1283                           
+  1284                           ;aula1211.c: 440: dd = 0x00;
+  1285  007EB2  0E00               	movlw	0
+  1286  007EB4  6E0B               	movwf	_dd,c
+  1287                           
+  1288                           ;aula1211.c: 441: du = 0x06;
+  1289  007EB6  0E06               	movlw	6
+  1290  007EB8  D05C               	goto	L49
+  1291  007EBA                     l880:
+  1292                           
+  1293                           ;aula1211.c: 445: prox = 4;
+  1294  007EBA  0E04               	movlw	4
+  1295  007EBC  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1296                           
+  1297                           ;aula1211.c: 446: dd = 0x00;
+  1298  007EBE  0E00               	movlw	0
+  1299  007EC0  6E0B               	movwf	_dd,c
+  1300                           
+  1301                           ;aula1211.c: 447: du = 0x66;
+  1302  007EC2  0E66               	movlw	102
+  1303  007EC4  D056               	goto	L49
+  1304  007EC6                     l882:
+  1305                           
+  1306                           ;aula1211.c: 451: prox = 6;
+  1307  007EC6  0E06               	movlw	6
+  1308  007EC8  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1309                           
+  1310                           ;aula1211.c: 452: dd = 0x00;
+  1311  007ECA  0E00               	movlw	0
+  1312  007ECC  6E0B               	movwf	_dd,c
+  1313                           
+  1314                           ;aula1211.c: 453: du = 0x7d;
+  1315  007ECE  0E7D               	movlw	125
+  1316  007ED0  D050               	goto	L49
+  1317  007ED2                     l884:
+  1318                           
+  1319                           ;aula1211.c: 457: prox = 8;
+  1320  007ED2  0E08               	movlw	8
+  1321  007ED4  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1322                           
+  1323                           ;aula1211.c: 458: dd = 0x00;
+  1324  007ED6  0E00               	movlw	0
+  1325  007ED8  D023               	goto	L58
+  1326  007EDA                     l886:
+  1327                           
+  1328                           ;aula1211.c: 463: prox = 9;
+  1329  007EDA  0E09               	movlw	9
+  1330  007EDC  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1331                           
+  1332                           ;aula1211.c: 464: dd = 0x00;
+  1333  007EDE  0E00               	movlw	0
+  1334  007EE0  6E0B               	movwf	_dd,c
+  1335                           
+  1336                           ;aula1211.c: 465: du = 0x6f;
+  1337  007EE2  0E6F               	movlw	111
+  1338  007EE4  D046               	goto	L49
+  1339  007EE6                     l888:
+  1340                           
+  1341                           ;aula1211.c: 469: prox = 10;
+  1342  007EE6  0E0A               	movlw	10
+  1343  007EE8  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1344                           
+  1345                           ;aula1211.c: 470: dd = 0x06;
+  1346  007EEA  0E06               	movlw	6
+  1347  007EEC  6E0B               	movwf	_dd,c
+  1348                           
+  1349                           ;aula1211.c: 471: du = 0x3f;
+  1350  007EEE  0E3F               	movlw	63
+  1351  007EF0  D040               	goto	L49
+  1352  007EF2                     l890:
+  1353                           
+  1354                           ;aula1211.c: 475: prox = 12;
+  1355  007EF2  0E0C               	movlw	12
+  1356  007EF4  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1357                           
+  1358                           ;aula1211.c: 476: dd = 0x06;
+  1359  007EF6  0E06               	movlw	6
+  1360  007EF8  6E0B               	movwf	_dd,c
+  1361                           
+  1362                           ;aula1211.c: 477: du = 0x5b;
+  1363  007EFA  0E5B               	movlw	91
+  1364  007EFC  D03A               	goto	L49
+  1365  007EFE                     l892:
+  1366                           
+  1367                           ;aula1211.c: 481: prox = 14;
+  1368  007EFE  0E0E               	movlw	14
+  1369  007F00  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1370                           
+  1371                           ;aula1211.c: 482: dd = 0x06;
+  1372  007F02  0E06               	movlw	6
+  1373  007F04  D7DD               	goto	L59
+  1374  007F06                     l894:
+  1375                           
+  1376                           ;aula1211.c: 487: prox = 15;
+  1377  007F06  0E0F               	movlw	15
+  1378  007F08  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1379                           
+  1380                           ;aula1211.c: 488: dd = 0x06;
+  1381  007F0A  0E06               	movlw	6
+  1382  007F0C  6E0B               	movwf	_dd,c
+  1383                           
+  1384                           ;aula1211.c: 489: du = 0x6d;
+  1385  007F0E  0E6D               	movlw	109
+  1386  007F10  D030               	goto	L49
+  1387  007F12                     l896:
+  1388                           
+  1389                           ;aula1211.c: 493: prox = 16;
+  1390  007F12  0E10               	movlw	16
+  1391  007F14  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1392                           
+  1393                           ;aula1211.c: 494: dd = 0x06;
+  1394  007F16  0E06               	movlw	6
+  1395  007F18  D7D9               	goto	L60
+  1396  007F1A                     l898:
+  1397                           
+  1398                           ;aula1211.c: 499: prox = 18;
+  1399  007F1A  0E12               	movlw	18
+  1400  007F1C  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1401                           
+  1402                           ;aula1211.c: 500: dd = 0x06;
+  1403  007F1E  0E06               	movlw	6
+  1404  007F20                     L58:
+  1405  007F20  6E0B               	movwf	_dd,c
+  1406                           
+  1407                           ;aula1211.c: 501: du = 0x7f;
+  1408  007F22  0E7F               	movlw	127
+  1409  007F24  D026               	goto	L49
+  1410  007F26                     l900:
+  1411                           
+  1412                           ;aula1211.c: 505: prox = 20;
+  1413  007F26  0E14               	movlw	20
+  1414  007F28  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1415                           
+  1416                           ;aula1211.c: 506: dd = 0x5b;
+  1417  007F2A  0E5B               	movlw	91
+  1418  007F2C  D7DF               	goto	L52
+  1419  007F2E                     l902:
+  1420                           
+  1421                           ;aula1211.c: 511: prox = 21;
+  1422  007F2E  0E15               	movlw	21
+  1423  007F30  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1424                           
+  1425                           ;aula1211.c: 512: dd = 0x5b;
+  1426  007F32  0E5B               	movlw	91
+  1427  007F34  D7BF               	goto	L61
+  1428  007F36                     l904:
+  1429                           
+  1430                           ;aula1211.c: 517: prox = 22;
+  1431  007F36  0E16               	movlw	22
+  1432  007F38  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1433                           
+  1434                           ;aula1211.c: 518: dd = 0x5b;
+  1435  007F3A  0E5B               	movlw	91
+  1436  007F3C  D7DD               	goto	L53
+  1437  007F3E                     l906:
+  1438                           
+  1439                           ;aula1211.c: 523: prox = 24;
+  1440  007F3E  0E18               	movlw	24
+  1441  007F40  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1442                           
+  1443                           ;aula1211.c: 524: dd = 0x5b;
+  1444  007F42  0E5B               	movlw	91
+  1445  007F44  D7BD               	goto	L59
+  1446  007F46                     l908:
+  1447                           
+  1448                           ;aula1211.c: 529: prox = 25;
+  1449  007F46  0E19               	movlw	25
+  1450  007F48  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1451                           
+  1452                           ;aula1211.c: 530: dd = 0x5b;
+  1453  007F4A  0E5B               	movlw	91
+  1454  007F4C  D7DF               	goto	L55
+  1455  007F4E                     l910:
+  1456                           
+  1457                           ;aula1211.c: 535: prox = 26;
+  1458  007F4E  0E1A               	movlw	26
+  1459  007F50  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1460                           
+  1461                           ;aula1211.c: 536: dd = 0x5b;
+  1462  007F52  0E5B               	movlw	91
+  1463  007F54  D7BB               	goto	L60
+  1464  007F56                     l912:
+  1465                           
+  1466                           ;aula1211.c: 541: prox = 27;
+  1467  007F56  0E1B               	movlw	27
+  1468  007F58  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1469                           
+  1470                           ;aula1211.c: 542: dd = 0x5b;
+  1471  007F5A  0E5B               	movlw	91
+  1472  007F5C  6E0B               	movwf	_dd,c
+  1473                           
+  1474                           ;aula1211.c: 543: du = 0x07;
+  1475  007F5E  0E07               	movlw	7
+  1476  007F60  D008               	goto	L49
+  1477  007F62                     l914:
+  1478                           
+  1479                           ;aula1211.c: 547: prox = 28;
+  1480  007F62  0E1C               	movlw	28
+  1481  007F64  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1482                           
+  1483                           ;aula1211.c: 548: dd = 0x5b;
+  1484  007F66  0E5B               	movlw	91
+  1485  007F68  D7DB               	goto	L58
+  1486  007F6A                     l916:
+  1487                           
+  1488                           ;aula1211.c: 553: prox = 30;
+  1489  007F6A  0E1E               	movlw	30
+  1490  007F6C  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1491                           
+  1492                           ;aula1211.c: 554: dd = 0x4f;
+  1493  007F6E  0E4F               	movlw	79
+  1494  007F70  D7BD               	goto	L52
+  1495  007F72                     L49:
+  1496  007F72  6E0A               	movwf	_du,c
+  1497                           
+  1498                           ;aula1211.c: 556: break;
+  1499  007F74  D043               	goto	l188
+  1500  007F76                     l920:
+  1501                           
+  1502                           ;aula1211.c: 565: prox = 0;
+  1503  007F76  0E00               	movlw	0
+  1504  007F78  6E1A               	movwf	f_maq_n_primo_c@prox,c
+  1505                           
+  1506                           ;aula1211.c: 566: dd = 0x00;
+  1507  007F7A  0E00               	movlw	0
+  1508  007F7C  D7B7               	goto	L52
+  1509  007F7E                     l922:
+  1510  007F7E  5019               	movf	f_maq_n_primo_c@atual,w,c
+  1511                           
+  1512                           ; Switch size 1, requested type "space"
+  1513                           ; Number of cases is 21, Range of values is 0 to 30
+  1514                           ; switch strategies available:
+  1515                           ; Name         Instructions Cycles
+  1516                           ; simple_byte           64    33 (average)
+  1517                           ;	Chosen strategy is simple_byte
+  1518  007F80  0A00               	xorlw	0	; case 0
+  1519  007F82  B4D8               	btfsc	status,2,c
+  1520  007F84  D794               	goto	l878
+  1521  007F86  0A01               	xorlw	1	; case 1
+  1522  007F88  B4D8               	btfsc	status,2,c
+  1523  007F8A  D797               	goto	l880
+  1524  007F8C  0A05               	xorlw	5	; case 4
+  1525  007F8E  B4D8               	btfsc	status,2,c
+  1526  007F90  D79A               	goto	l882
+  1527  007F92  0A02               	xorlw	2	; case 6
+  1528  007F94  B4D8               	btfsc	status,2,c
+  1529  007F96  D79D               	goto	l884
+  1530  007F98  0A0E               	xorlw	14	; case 8
+  1531  007F9A  B4D8               	btfsc	status,2,c
+  1532  007F9C  D79E               	goto	l886
+  1533  007F9E  0A01               	xorlw	1	; case 9
+  1534  007FA0  B4D8               	btfsc	status,2,c
+  1535  007FA2  D7A1               	goto	l888
+  1536  007FA4  0A03               	xorlw	3	; case 10
+  1537  007FA6  B4D8               	btfsc	status,2,c
+  1538  007FA8  D7A4               	goto	l890
+  1539  007FAA  0A06               	xorlw	6	; case 12
+  1540  007FAC  B4D8               	btfsc	status,2,c
+  1541  007FAE  D7A7               	goto	l892
+  1542  007FB0  0A02               	xorlw	2	; case 14
+  1543  007FB2  B4D8               	btfsc	status,2,c
+  1544  007FB4  D7A8               	goto	l894
+  1545  007FB6  0A01               	xorlw	1	; case 15
+  1546  007FB8  B4D8               	btfsc	status,2,c
+  1547  007FBA  D7AB               	goto	l896
+  1548  007FBC  0A1F               	xorlw	31	; case 16
+  1549  007FBE  B4D8               	btfsc	status,2,c
+  1550  007FC0  D7AC               	goto	l898
+  1551  007FC2  0A02               	xorlw	2	; case 18
+  1552  007FC4  B4D8               	btfsc	status,2,c
+  1553  007FC6  D7AF               	goto	l900
+  1554  007FC8  0A06               	xorlw	6	; case 20
+  1555  007FCA  B4D8               	btfsc	status,2,c
+  1556  007FCC  D7B0               	goto	l902
+  1557  007FCE  0A01               	xorlw	1	; case 21
+  1558  007FD0  B4D8               	btfsc	status,2,c
+  1559  007FD2  D7B1               	goto	l904
+  1560  007FD4  0A03               	xorlw	3	; case 22
+  1561  007FD6  B4D8               	btfsc	status,2,c
+  1562  007FD8  D7B2               	goto	l906
+  1563  007FDA  0A0E               	xorlw	14	; case 24
+  1564  007FDC  B4D8               	btfsc	status,2,c
+  1565  007FDE  D7B3               	goto	l908
+  1566  007FE0  0A01               	xorlw	1	; case 25
+  1567  007FE2  B4D8               	btfsc	status,2,c
+  1568  007FE4  D7B4               	goto	l910
+  1569  007FE6  0A03               	xorlw	3	; case 26
+  1570  007FE8  B4D8               	btfsc	status,2,c
+  1571  007FEA  D7B5               	goto	l912
+  1572  007FEC  0A01               	xorlw	1	; case 27
+  1573  007FEE  B4D8               	btfsc	status,2,c
+  1574  007FF0  D7B8               	goto	l914
+  1575  007FF2  0A07               	xorlw	7	; case 28
+  1576  007FF4  B4D8               	btfsc	status,2,c
+  1577  007FF6  D7B9               	goto	l916
+  1578  007FF8  0A02               	xorlw	2	; case 30
+  1579  007FFA  D7BD               	goto	l920
+  1580  007FFC                     l188:
+  1581                           
+  1582                           ;aula1211.c: 569: return prox;
+  1583  007FFC  501A               	movf	f_maq_n_primo_c@prox,w,c
+  1584  007FFE  0012               	return		;funcret
+  1585  008000                     __end_of_f_maq_n_primo_c:
+  1586                           	opt stack 0
+  1587                           tblptru	equ	0xFF8
+  1588                           tblptrh	equ	0xFF7
+  1589                           tblptrl	equ	0xFF6
+  1590                           tablat	equ	0xFF5
+  1591                           postinc0	equ	0xFEE
+  1592                           wreg	equ	0xFE8
+  1593                           postdec1	equ	0xFE5
+  1594                           fsr1l	equ	0xFE1
+  1595                           status	equ	0xFD8
+  1596                           
+  1597 ;; *************** function _f_maq_n_3_d *****************
+  1598 ;; Defined at:
+  1599 ;;		line 704 in file "aula1211.c"
+  1600 ;; Parameters:    Size  Location     Type
+  1601 ;;  atual           1    wreg     unsigned char 
+  1602 ;; Auto vars:     Size  Location     Type
+  1603 ;;  atual           1    0[COMRAM] unsigned char 
+  1604 ;;  prox            1    1[COMRAM] unsigned char 
+  1605 ;; Return value:  Size  Location     Type
+  1606 ;;                  1    wreg      unsigned char 
+  1607 ;; Registers used:
+  1608 ;;		wreg, status,2, status,0
+  1609 ;; Tracked objects:
+  1610 ;;		On entry : 0/0
+  1611 ;;		On exit  : 0/0
+  1612 ;;		Unchanged: 0/0
+  1613 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1614 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1615 ;;      Locals:         2       0       0       0       0       0       0       0       0
+  1616 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1617 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1618 ;;Total ram usage:        2 bytes
+  1619 ;; Hardware stack levels used:    1
+  1620 ;; This function calls:
+  1621 ;;		Nothing
+  1622 ;; This function is called by:
+  1623 ;;		_f_timer3
+  1624 ;; This function uses a non-reentrant model
+  1625 ;;
+  1626                           
+  1627                           	psect	text9
+  1628  007D5A                     __ptext9:
+  1629                           	opt stack 0
+  1630  007D5A                     _f_maq_n_3_d:
+  1631                           	opt stack 27
+  1632                           
+  1633                           ;incstack = 0
+  1634                           ;f_maq_n_3_d@atual stored from wreg
+  1635  007D5A  6E19               	movwf	f_maq_n_3_d@atual,c
+  1636                           
+  1637                           ;aula1211.c: 705: unsigned char prox;
+  1638                           ;aula1211.c: 706: switch(atual){
+  1639  007D5C  D066               	goto	l1064
+  1640  007D5E                     l1020:
+  1641                           
+  1642                           ;aula1211.c: 708: prox = 28;
+  1643  007D5E  0E1C               	movlw	28
+  1644  007D60  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1645                           
+  1646                           ;aula1211.c: 709: dd = 0x5b;
+  1647  007D62  0E5B               	movlw	91
+  1648  007D64  6E0B               	movwf	_dd,c
+  1649                           
+  1650                           ;aula1211.c: 710: du = 0x7f;
+  1651  007D66  0E7F               	movlw	127
+  1652  007D68  D05A               	goto	L80
+  1653  007D6A                     l1022:
+  1654                           
+  1655                           ;aula1211.c: 714: prox = 26;
+  1656  007D6A  0E1A               	movlw	26
+  1657  007D6C  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1658                           
+  1659                           ;aula1211.c: 715: dd = 0x5b;
+  1660  007D6E  0E5B               	movlw	91
+  1661  007D70  6E0B               	movwf	_dd,c
+  1662                           
+  1663                           ;aula1211.c: 716: du = 0x7d;
+  1664  007D72  0E7D               	movlw	125
+  1665  007D74  D054               	goto	L80
+  1666  007D76                     l1024:
+  1667                           
+  1668                           ;aula1211.c: 720: prox = 25;
+  1669  007D76  0E19               	movlw	25
+  1670  007D78  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1671                           
+  1672                           ;aula1211.c: 721: dd = 0x5b;
+  1673  007D7A  0E5B               	movlw	91
+  1674  007D7C  6E0B               	movwf	_dd,c
+  1675                           
+  1676                           ;aula1211.c: 722: du = 0x6d;
+  1677  007D7E  0E6D               	movlw	109
+  1678  007D80  D04E               	goto	L80
+  1679  007D82                     l1026:
+  1680                           
+  1681                           ;aula1211.c: 726: prox = 23;
+  1682  007D82  0E17               	movlw	23
+  1683  007D84  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1684                           
+  1685                           ;aula1211.c: 727: dd = 0x5b;
+  1686  007D86  0E5B               	movlw	91
+  1687  007D88  D025               	goto	L87
+  1688  007D8A                     l1028:
+  1689                           
+  1690                           ;aula1211.c: 732: prox = 22;
+  1691  007D8A  0E16               	movlw	22
+  1692  007D8C  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1693                           
+  1694                           ;aula1211.c: 733: dd = 0x5b;
+  1695  007D8E  0E5B               	movlw	91
+  1696  007D90  6E0B               	movwf	_dd,c
+  1697                           
+  1698                           ;aula1211.c: 734: du = 0x5b;
+  1699  007D92  0E5B               	movlw	91
+  1700  007D94  D044               	goto	L80
+  1701  007D96                     l1030:
+  1702                           
+  1703                           ;aula1211.c: 738: prox = 20;
+  1704  007D96  0E14               	movlw	20
+  1705  007D98  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1706                           
+  1707                           ;aula1211.c: 739: dd = 0x5b;
+  1708  007D9A  0E5B               	movlw	91
+  1709  007D9C  6E0B               	movwf	_dd,c
+  1710                           
+  1711                           ;aula1211.c: 740: du = 0x3f;
+  1712  007D9E  0E3F               	movlw	63
+  1713  007DA0  D03E               	goto	L80
+  1714  007DA2                     l1032:
+  1715                           
+  1716                           ;aula1211.c: 744: prox = 19;
+  1717  007DA2  0E13               	movlw	19
+  1718  007DA4  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1719                           
+  1720                           ;aula1211.c: 745: dd = 0x06;
+  1721  007DA6  0E06               	movlw	6
+  1722  007DA8  6E0B               	movwf	_dd,c
+  1723                           
+  1724                           ;aula1211.c: 746: du = 0x6f;
+  1725  007DAA  0E6F               	movlw	111
+  1726  007DAC  D038               	goto	L80
+  1727  007DAE                     l1034:
+  1728                           
+  1729                           ;aula1211.c: 750: prox = 17;
+  1730  007DAE  0E11               	movlw	17
+  1731  007DB0  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1732                           
+  1733                           ;aula1211.c: 751: dd = 0x06;
+  1734  007DB2  0E06               	movlw	6
+  1735  007DB4  6E0B               	movwf	_dd,c
+  1736                           
+  1737                           ;aula1211.c: 752: du = 0x07;
+  1738  007DB6  0E07               	movlw	7
+  1739  007DB8  D032               	goto	L80
+  1740  007DBA                     l1036:
+  1741                           
+  1742                           ;aula1211.c: 756: prox = 16;
+  1743  007DBA  0E10               	movlw	16
+  1744  007DBC  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1745                           
+  1746                           ;aula1211.c: 757: dd = 0x06;
+  1747  007DBE  0E06               	movlw	6
+  1748  007DC0  D7D7               	goto	L88
+  1749  007DC2                     l1038:
+  1750                           
+  1751                           ;aula1211.c: 762: prox = 14;
+  1752  007DC2  0E0E               	movlw	14
+  1753  007DC4  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1754                           
+  1755                           ;aula1211.c: 763: dd = 0x06;
+  1756  007DC6  0E06               	movlw	6
+  1757  007DC8  6E0B               	movwf	_dd,c
+  1758                           
+  1759                           ;aula1211.c: 764: du = 0x66;
+  1760  007DCA  0E66               	movlw	102
+  1761  007DCC  D028               	goto	L80
+  1762  007DCE                     l1040:
+  1763                           
+  1764                           ;aula1211.c: 768: prox = 13;
+  1765  007DCE  0E0D               	movlw	13
+  1766  007DD0  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1767                           
+  1768                           ;aula1211.c: 769: dd = 0x06;
+  1769  007DD2  0E06               	movlw	6
+  1770  007DD4                     L87:
+  1771  007DD4  6E0B               	movwf	_dd,c
+  1772                           
+  1773                           ;aula1211.c: 770: du = 0x4f;
+  1774  007DD6  0E4F               	movlw	79
+  1775  007DD8  D022               	goto	L80
+  1776  007DDA                     l1042:
+  1777                           
+  1778                           ;aula1211.c: 774: prox = 11;
+  1779  007DDA  0E0B               	movlw	11
+  1780  007DDC  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1781                           
+  1782                           ;aula1211.c: 775: dd = 0x06;
+  1783  007DDE  0E06               	movlw	6
+  1784  007DE0  6E0B               	movwf	_dd,c
+  1785                           
+  1786                           ;aula1211.c: 776: du = 0x06;
+  1787  007DE2  0E06               	movlw	6
+  1788  007DE4  D01C               	goto	L80
+  1789  007DE6                     l1044:
+  1790                           
+  1791                           ;aula1211.c: 780: prox = 10;
+  1792  007DE6  0E0A               	movlw	10
+  1793  007DE8  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1794                           
+  1795                           ;aula1211.c: 781: dd = 0x06;
+  1796  007DEA  0E06               	movlw	6
+  1797  007DEC  D7D7               	goto	L82
+  1798  007DEE                     l1046:
+  1799                           
+  1800                           ;aula1211.c: 786: prox = 8;
+  1801  007DEE  0E08               	movlw	8
+  1802  007DF0  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1803                           
+  1804                           ;aula1211.c: 787: dd = 0x00;
+  1805  007DF2  0E00               	movlw	0
+  1806  007DF4  D7B7               	goto	L89
+  1807  007DF6                     l1048:
+  1808                           
+  1809                           ;aula1211.c: 792: prox = 7;
+  1810  007DF6  0E07               	movlw	7
+  1811  007DF8  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1812                           
+  1813                           ;aula1211.c: 793: dd = 0x00;
+  1814  007DFA  0E00               	movlw	0
+  1815  007DFC  D7DB               	goto	L83
+  1816  007DFE                     l1050:
+  1817                           
+  1818                           ;aula1211.c: 798: prox = 5;
+  1819  007DFE  0E05               	movlw	5
+  1820  007E00  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1821                           
+  1822                           ;aula1211.c: 799: dd = 0x00;
+  1823  007E02  0E00               	movlw	0
+  1824  007E04  D7BB               	goto	L90
+  1825  007E06                     l1052:
+  1826                           
+  1827                           ;aula1211.c: 804: prox = 4;
+  1828  007E06  0E04               	movlw	4
+  1829  007E08  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1830                           
+  1831                           ;aula1211.c: 805: dd = 0x00;
+  1832  007E0A  0E00               	movlw	0
+  1833  007E0C  D7DD               	goto	L84
+  1834  007E0E                     l1054:
+  1835                           
+  1836                           ;aula1211.c: 810: prox = 2;
+  1837  007E0E  0E02               	movlw	2
+  1838  007E10  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1839                           
+  1840                           ;aula1211.c: 811: dd = 0x00;
+  1841  007E12  0E00               	movlw	0
+  1842  007E14  D7BD               	goto	L85
+  1843  007E16                     l1056:
+  1844                           
+  1845                           ;aula1211.c: 816: prox = 1;
+  1846  007E16  0E01               	movlw	1
+  1847  007E18  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1848                           
+  1849                           ;aula1211.c: 817: dd = 0x00;
+  1850  007E1A  0E00               	movlw	0
+  1851  007E1C  D7E1               	goto	L81
+  1852  007E1E                     L80:
+  1853  007E1E  6E0A               	movwf	_du,c
+  1854                           
+  1855                           ;aula1211.c: 825: break;
+  1856  007E20  D042               	goto	l241
+  1857  007E22                     l1060:
+  1858                           
+  1859                           ;aula1211.c: 828: prox = 29;
+  1860  007E22  0E1D               	movlw	29
+  1861  007E24  6E1A               	movwf	f_maq_n_3_d@prox,c
+  1862                           
+  1863                           ;aula1211.c: 829: dd = 0x5b;
+  1864  007E26  0E5B               	movlw	91
+  1865  007E28  D7BF               	goto	L86
+  1866  007E2A                     l1064:
+  1867  007E2A  5019               	movf	f_maq_n_3_d@atual,w,c
+  1868                           
+  1869                           ; Switch size 1, requested type "space"
+  1870                           ; Number of cases is 20, Range of values is 1 to 29
+  1871                           ; switch strategies available:
+  1872                           ; Name         Instructions Cycles
+  1873                           ; simple_byte           61    31 (average)
+  1874                           ;	Chosen strategy is simple_byte
+  1875  007E2C  0A01               	xorlw	1	; case 1
+  1876  007E2E  B4D8               	btfsc	status,2,c
+  1877  007E30  D7F8               	goto	l1060
+  1878  007E32  0A03               	xorlw	3	; case 2
+  1879  007E34  B4D8               	btfsc	status,2,c
+  1880  007E36  D7EF               	goto	l1056
+  1881  007E38  0A06               	xorlw	6	; case 4
+  1882  007E3A  B4D8               	btfsc	status,2,c
+  1883  007E3C  D7E8               	goto	l1054
+  1884  007E3E  0A01               	xorlw	1	; case 5
+  1885  007E40  B4D8               	btfsc	status,2,c
+  1886  007E42  D7E1               	goto	l1052
+  1887  007E44  0A02               	xorlw	2	; case 7
+  1888  007E46  B4D8               	btfsc	status,2,c
+  1889  007E48  D7DA               	goto	l1050
+  1890  007E4A  0A0F               	xorlw	15	; case 8
+  1891  007E4C  B4D8               	btfsc	status,2,c
+  1892  007E4E  D7D3               	goto	l1048
+  1893  007E50  0A02               	xorlw	2	; case 10
+  1894  007E52  B4D8               	btfsc	status,2,c
+  1895  007E54  D7CC               	goto	l1046
+  1896  007E56  0A01               	xorlw	1	; case 11
+  1897  007E58  B4D8               	btfsc	status,2,c
+  1898  007E5A  D7C5               	goto	l1044
+  1899  007E5C  0A06               	xorlw	6	; case 13
+  1900  007E5E  B4D8               	btfsc	status,2,c
+  1901  007E60  D7BC               	goto	l1042
+  1902  007E62  0A03               	xorlw	3	; case 14
+  1903  007E64  B4D8               	btfsc	status,2,c
+  1904  007E66  D7B3               	goto	l1040
+  1905  007E68  0A1E               	xorlw	30	; case 16
+  1906  007E6A  B4D8               	btfsc	status,2,c
+  1907  007E6C  D7AA               	goto	l1038
+  1908  007E6E  0A01               	xorlw	1	; case 17
+  1909  007E70  B4D8               	btfsc	status,2,c
+  1910  007E72  D7A3               	goto	l1036
+  1911  007E74  0A02               	xorlw	2	; case 19
+  1912  007E76  B4D8               	btfsc	status,2,c
+  1913  007E78  D79A               	goto	l1034
+  1914  007E7A  0A07               	xorlw	7	; case 20
+  1915  007E7C  B4D8               	btfsc	status,2,c
+  1916  007E7E  D791               	goto	l1032
+  1917  007E80  0A02               	xorlw	2	; case 22
+  1918  007E82  B4D8               	btfsc	status,2,c
+  1919  007E84  D788               	goto	l1030
+  1920  007E86  0A01               	xorlw	1	; case 23
+  1921  007E88  B4D8               	btfsc	status,2,c
+  1922  007E8A  D77F               	goto	l1028
+  1923  007E8C  0A0E               	xorlw	14	; case 25
+  1924  007E8E  B4D8               	btfsc	status,2,c
+  1925  007E90  D778               	goto	l1026
+  1926  007E92  0A03               	xorlw	3	; case 26
+  1927  007E94  B4D8               	btfsc	status,2,c
+  1928  007E96  D76F               	goto	l1024
+  1929  007E98  0A06               	xorlw	6	; case 28
+  1930  007E9A  B4D8               	btfsc	status,2,c
+  1931  007E9C  D766               	goto	l1022
+  1932  007E9E  0A01               	xorlw	1	; case 29
+  1933  007EA0  B4D8               	btfsc	status,2,c
+  1934  007EA2  D75D               	goto	l1020
+  1935  007EA4  D7BE               	goto	l1060
+  1936  007EA6                     l241:
+  1937                           
+  1938                           ;aula1211.c: 833: return prox;
+  1939  007EA6  501A               	movf	f_maq_n_3_d@prox,w,c
+  1940  007EA8  0012               	return		;funcret
+  1941  007EAA                     __end_of_f_maq_n_3_d:
+  1942                           	opt stack 0
+  1943                           tblptru	equ	0xFF8
+  1944                           tblptrh	equ	0xFF7
+  1945                           tblptrl	equ	0xFF6
+  1946                           tablat	equ	0xFF5
+  1947                           postinc0	equ	0xFEE
+  1948                           wreg	equ	0xFE8
+  1949                           postdec1	equ	0xFE5
+  1950                           fsr1l	equ	0xFE1
+  1951                           status	equ	0xFD8
+  1952                           
+  1953 ;; *************** function _f_maq_n_3_c *****************
+  1954 ;; Defined at:
+  1955 ;;		line 298 in file "aula1211.c"
+  1956 ;; Parameters:    Size  Location     Type
+  1957 ;;  atual           1    wreg     unsigned char 
+  1958 ;; Auto vars:     Size  Location     Type
+  1959 ;;  atual           1    0[COMRAM] unsigned char 
+  1960 ;;  prox            1    1[COMRAM] unsigned char 
+  1961 ;; Return value:  Size  Location     Type
+  1962 ;;                  1    wreg      unsigned char 
+  1963 ;; Registers used:
+  1964 ;;		wreg, status,2, status,0
+  1965 ;; Tracked objects:
+  1966 ;;		On entry : 0/0
+  1967 ;;		On exit  : 0/0
+  1968 ;;		Unchanged: 0/0
+  1969 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1970 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1971 ;;      Locals:         2       0       0       0       0       0       0       0       0
+  1972 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1973 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1974 ;;Total ram usage:        2 bytes
+  1975 ;; Hardware stack levels used:    1
+  1976 ;; This function calls:
+  1977 ;;		Nothing
+  1978 ;; This function is called by:
+  1979 ;;		_f_timer3
+  1980 ;; This function uses a non-reentrant model
+  1981 ;;
+  1982                           
+  1983                           	psect	text10
+  1984  007AC2                     __ptext10:
+  1985                           	opt stack 0
+  1986  007AC2                     _f_maq_n_3_c:
+  1987                           	opt stack 27
+  1988                           
+  1989                           ;incstack = 0
+  1990                           ;f_maq_n_3_c@atual stored from wreg
+  1991  007AC2  6E19               	movwf	f_maq_n_3_c@atual,c
+  1992                           
+  1993                           ;aula1211.c: 300: unsigned char prox;
+  1994                           ;aula1211.c: 302: switch (atual) {
+  1995  007AC4  D066               	goto	l968
+  1996  007AC6                     l926:
+  1997                           
+  1998                           ;aula1211.c: 305: prox = 2;
+  1999  007AC6  0E02               	movlw	2
+  2000  007AC8  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2001                           
+  2002                           ;aula1211.c: 306: dd = 0x00;
+  2003  007ACA  0E00               	movlw	0
+  2004  007ACC  6E0B               	movwf	_dd,c
+  2005                           
+  2006                           ;aula1211.c: 307: du = 0x5b;
+  2007  007ACE  0E5B               	movlw	91
+  2008  007AD0  D05A               	goto	L109
+  2009  007AD2                     l928:
+  2010                           
+  2011                           ;aula1211.c: 311: prox = 4;
+  2012  007AD2  0E04               	movlw	4
+  2013  007AD4  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2014                           
+  2015                           ;aula1211.c: 312: dd = 0x00;
+  2016  007AD6  0E00               	movlw	0
+  2017  007AD8  6E0B               	movwf	_dd,c
+  2018                           
+  2019                           ;aula1211.c: 313: du = 0x66;
+  2020  007ADA  0E66               	movlw	102
+  2021  007ADC  D054               	goto	L109
+  2022  007ADE                     l930:
+  2023                           
+  2024                           ;aula1211.c: 317: prox = 5;
+  2025  007ADE  0E05               	movlw	5
+  2026  007AE0  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2027                           
+  2028                           ;aula1211.c: 318: dd = 0x00;
+  2029  007AE2  0E00               	movlw	0
+  2030  007AE4  6E0B               	movwf	_dd,c
+  2031                           
+  2032                           ;aula1211.c: 319: du = 0x6d;
+  2033  007AE6  0E6D               	movlw	109
+  2034  007AE8  D04E               	goto	L109
+  2035  007AEA                     l932:
+  2036                           
+  2037                           ;aula1211.c: 323: prox = 7;
+  2038  007AEA  0E07               	movlw	7
+  2039  007AEC  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2040                           
+  2041                           ;aula1211.c: 324: dd = 0x00;
+  2042  007AEE  0E00               	movlw	0
+  2043  007AF0  D025               	goto	L116
+  2044  007AF2                     l934:
+  2045                           
+  2046                           ;aula1211.c: 329: prox = 8;
+  2047  007AF2  0E08               	movlw	8
+  2048  007AF4  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2049                           
+  2050                           ;aula1211.c: 330: dd = 0x00;
+  2051  007AF6  0E00               	movlw	0
+  2052  007AF8  6E0B               	movwf	_dd,c
+  2053                           
+  2054                           ;aula1211.c: 331: du = 0x7f;
+  2055  007AFA  0E7F               	movlw	127
+  2056  007AFC  D044               	goto	L109
+  2057  007AFE                     l936:
+  2058                           
+  2059                           ;aula1211.c: 335: prox = 10;
+  2060  007AFE  0E0A               	movlw	10
+  2061  007B00  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2062                           
+  2063                           ;aula1211.c: 336: dd = 0x06;
+  2064  007B02  0E06               	movlw	6
+  2065  007B04  6E0B               	movwf	_dd,c
+  2066                           
+  2067                           ;aula1211.c: 337: du = 0x3f;
+  2068  007B06  0E3F               	movlw	63
+  2069  007B08  D03E               	goto	L109
+  2070  007B0A                     l938:
+  2071                           
+  2072                           ;aula1211.c: 341: prox = 11;
+  2073  007B0A  0E0B               	movlw	11
+  2074  007B0C  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2075                           
+  2076                           ;aula1211.c: 342: dd = 0x06;
+  2077  007B0E  0E06               	movlw	6
+  2078  007B10  6E0B               	movwf	_dd,c
+  2079                           
+  2080                           ;aula1211.c: 343: du = 0x06;
+  2081  007B12  0E06               	movlw	6
+  2082  007B14  D038               	goto	L109
+  2083  007B16                     l940:
+  2084                           
+  2085                           ;aula1211.c: 347: prox = 13;
+  2086  007B16  0E0D               	movlw	13
+  2087  007B18  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2088                           
+  2089                           ;aula1211.c: 348: dd = 0x06;
+  2090  007B1A  0E06               	movlw	6
+  2091  007B1C  6E0B               	movwf	_dd,c
+  2092                           
+  2093                           ;aula1211.c: 349: du = 0x4f;
+  2094  007B1E  0E4F               	movlw	79
+  2095  007B20  D032               	goto	L109
+  2096  007B22                     l942:
+  2097                           
+  2098                           ;aula1211.c: 353: prox = 14;
+  2099  007B22  0E0E               	movlw	14
+  2100  007B24  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2101                           
+  2102                           ;aula1211.c: 354: dd = 0x06;
+  2103  007B26  0E06               	movlw	6
+  2104  007B28  D7D7               	goto	L117
+  2105  007B2A                     l944:
+  2106                           
+  2107                           ;aula1211.c: 359: prox = 16;
+  2108  007B2A  0E10               	movlw	16
+  2109  007B2C  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2110                           
+  2111                           ;aula1211.c: 360: dd = 0x06;
+  2112  007B2E  0E06               	movlw	6
+  2113  007B30  6E0B               	movwf	_dd,c
+  2114                           
+  2115                           ;aula1211.c: 361: du = 0x7d;
+  2116  007B32  0E7D               	movlw	125
+  2117  007B34  D028               	goto	L109
+  2118  007B36                     l946:
+  2119                           
+  2120                           ;aula1211.c: 365: prox = 17;
+  2121  007B36  0E11               	movlw	17
+  2122  007B38  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2123                           
+  2124                           ;aula1211.c: 366: dd = 0x06;
+  2125  007B3A  0E06               	movlw	6
+  2126  007B3C                     L116:
+  2127  007B3C  6E0B               	movwf	_dd,c
+  2128                           
+  2129                           ;aula1211.c: 367: du = 0x07;
+  2130  007B3E  0E07               	movlw	7
+  2131  007B40  D022               	goto	L109
+  2132  007B42                     l948:
+  2133                           
+  2134                           ;aula1211.c: 371: prox = 19;
+  2135  007B42  0E13               	movlw	19
+  2136  007B44  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2137                           
+  2138                           ;aula1211.c: 372: dd = 0x06;
+  2139  007B46  0E06               	movlw	6
+  2140  007B48  6E0B               	movwf	_dd,c
+  2141                           
+  2142                           ;aula1211.c: 373: du = 0x6f;
+  2143  007B4A  0E6F               	movlw	111
+  2144  007B4C  D01C               	goto	L109
+  2145  007B4E                     l950:
+  2146                           
+  2147                           ;aula1211.c: 377: prox = 20;
+  2148  007B4E  0E14               	movlw	20
+  2149  007B50  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2150                           
+  2151                           ;aula1211.c: 378: dd = 0x5b;
+  2152  007B52  0E5B               	movlw	91
+  2153  007B54  D7D7               	goto	L111
+  2154  007B56                     l952:
+  2155                           
+  2156                           ;aula1211.c: 383: prox = 22;
+  2157  007B56  0E16               	movlw	22
+  2158  007B58  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2159                           
+  2160                           ;aula1211.c: 384: dd = 0x5b;
+  2161  007B5A  0E5B               	movlw	91
+  2162  007B5C  D7B7               	goto	L118
+  2163  007B5E                     l954:
+  2164                           
+  2165                           ;aula1211.c: 389: prox = 23;
+  2166  007B5E  0E17               	movlw	23
+  2167  007B60  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2168                           
+  2169                           ;aula1211.c: 390: dd = 0x5b;
+  2170  007B62  0E5B               	movlw	91
+  2171  007B64  D7DB               	goto	L112
+  2172  007B66                     l956:
+  2173                           
+  2174                           ;aula1211.c: 395: prox = 25;
+  2175  007B66  0E19               	movlw	25
+  2176  007B68  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2177                           
+  2178                           ;aula1211.c: 396: dd = 0x5b;
+  2179  007B6A  0E5B               	movlw	91
+  2180  007B6C  D7BB               	goto	L119
+  2181  007B6E                     l958:
+  2182                           
+  2183                           ;aula1211.c: 401: prox = 26;
+  2184  007B6E  0E1A               	movlw	26
+  2185  007B70  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2186                           
+  2187                           ;aula1211.c: 402: dd = 0x5b;
+  2188  007B72  0E5B               	movlw	91
+  2189  007B74  D7DD               	goto	L113
+  2190  007B76                     l960:
+  2191                           
+  2192                           ;aula1211.c: 407: prox = 28;
+  2193  007B76  0E1C               	movlw	28
+  2194  007B78  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2195                           
+  2196                           ;aula1211.c: 408: dd = 0x5b;
+  2197  007B7A  0E5B               	movlw	91
+  2198  007B7C  D7BD               	goto	L114
+  2199  007B7E                     l962:
+  2200                           
+  2201                           ;aula1211.c: 413: prox = 29;
+  2202  007B7E  0E1D               	movlw	29
+  2203  007B80  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2204                           
+  2205                           ;aula1211.c: 414: dd = 0x5b;
+  2206  007B82  0E5B               	movlw	91
+  2207  007B84  D7E1               	goto	L110
+  2208  007B86                     L109:
+  2209  007B86  6E0A               	movwf	_du,c
+  2210                           
+  2211                           ;aula1211.c: 422: break;
+  2212  007B88  D040               	goto	l162
+  2213  007B8A                     l966:
+  2214                           
+  2215                           ;aula1211.c: 425: prox = 1;
+  2216  007B8A  0E01               	movlw	1
+  2217  007B8C  6E1A               	movwf	f_maq_n_3_c@prox,c
+  2218                           
+  2219                           ;aula1211.c: 426: dd = 0x00;
+  2220  007B8E  0E00               	movlw	0
+  2221  007B90  D7BF               	goto	L115
+  2222  007B92                     l968:
+  2223  007B92  5019               	movf	f_maq_n_3_c@atual,w,c
+  2224                           
+  2225                           ; Switch size 1, requested type "space"
+  2226                           ; Number of cases is 20, Range of values is 1 to 29
+  2227                           ; switch strategies available:
+  2228                           ; Name         Instructions Cycles
+  2229                           ; simple_byte           61    31 (average)
+  2230                           ;	Chosen strategy is simple_byte
+  2231  007B94  0A01               	xorlw	1	; case 1
+  2232  007B96  B4D8               	btfsc	status,2,c
+  2233  007B98  D796               	goto	l926
+  2234  007B9A  0A03               	xorlw	3	; case 2
+  2235  007B9C  B4D8               	btfsc	status,2,c
+  2236  007B9E  D799               	goto	l928
+  2237  007BA0  0A06               	xorlw	6	; case 4
+  2238  007BA2  B4D8               	btfsc	status,2,c
+  2239  007BA4  D79C               	goto	l930
+  2240  007BA6  0A01               	xorlw	1	; case 5
+  2241  007BA8  B4D8               	btfsc	status,2,c
+  2242  007BAA  D79F               	goto	l932
+  2243  007BAC  0A02               	xorlw	2	; case 7
+  2244  007BAE  B4D8               	btfsc	status,2,c
+  2245  007BB0  D7A0               	goto	l934
+  2246  007BB2  0A0F               	xorlw	15	; case 8
+  2247  007BB4  B4D8               	btfsc	status,2,c
+  2248  007BB6  D7A3               	goto	l936
+  2249  007BB8  0A02               	xorlw	2	; case 10
+  2250  007BBA  B4D8               	btfsc	status,2,c
+  2251  007BBC  D7A6               	goto	l938
+  2252  007BBE  0A01               	xorlw	1	; case 11
+  2253  007BC0  B4D8               	btfsc	status,2,c
+  2254  007BC2  D7A9               	goto	l940
+  2255  007BC4  0A06               	xorlw	6	; case 13
+  2256  007BC6  B4D8               	btfsc	status,2,c
+  2257  007BC8  D7AC               	goto	l942
+  2258  007BCA  0A03               	xorlw	3	; case 14
+  2259  007BCC  B4D8               	btfsc	status,2,c
+  2260  007BCE  D7AD               	goto	l944
+  2261  007BD0  0A1E               	xorlw	30	; case 16
+  2262  007BD2  B4D8               	btfsc	status,2,c
+  2263  007BD4  D7B0               	goto	l946
+  2264  007BD6  0A01               	xorlw	1	; case 17
+  2265  007BD8  B4D8               	btfsc	status,2,c
+  2266  007BDA  D7B3               	goto	l948
+  2267  007BDC  0A02               	xorlw	2	; case 19
+  2268  007BDE  B4D8               	btfsc	status,2,c
+  2269  007BE0  D7B6               	goto	l950
+  2270  007BE2  0A07               	xorlw	7	; case 20
+  2271  007BE4  B4D8               	btfsc	status,2,c
+  2272  007BE6  D7B7               	goto	l952
+  2273  007BE8  0A02               	xorlw	2	; case 22
+  2274  007BEA  B4D8               	btfsc	status,2,c
+  2275  007BEC  D7B8               	goto	l954
+  2276  007BEE  0A01               	xorlw	1	; case 23
+  2277  007BF0  B4D8               	btfsc	status,2,c
+  2278  007BF2  D7B9               	goto	l956
+  2279  007BF4  0A0E               	xorlw	14	; case 25
+  2280  007BF6  B4D8               	btfsc	status,2,c
+  2281  007BF8  D7BA               	goto	l958
+  2282  007BFA  0A03               	xorlw	3	; case 26
+  2283  007BFC  B4D8               	btfsc	status,2,c
+  2284  007BFE  D7BB               	goto	l960
+  2285  007C00  0A06               	xorlw	6	; case 28
+  2286  007C02  B4D8               	btfsc	status,2,c
+  2287  007C04  D7BC               	goto	l962
+  2288  007C06  0A01               	xorlw	1	; case 29
+  2289  007C08  D7C0               	goto	l966
+  2290  007C0A                     l162:
+  2291                           
+  2292                           ;aula1211.c: 429: return prox;
+  2293  007C0A  501A               	movf	f_maq_n_3_c@prox,w,c
+  2294  007C0C  0012               	return		;funcret
+  2295  007C0E                     __end_of_f_maq_n_3_c:
+  2296                           	opt stack 0
+  2297                           tblptru	equ	0xFF8
+  2298                           tblptrh	equ	0xFF7
+  2299                           tblptrl	equ	0xFF6
+  2300                           tablat	equ	0xFF5
+  2301                           postinc0	equ	0xFEE
+  2302                           wreg	equ	0xFE8
+  2303                           postdec1	equ	0xFE5
+  2304                           fsr1l	equ	0xFE1
+  2305                           status	equ	0xFD8
+  2306                           
+  2307 ;; *************** function _f_timer2 *****************
+  2308 ;; Defined at:
+  2309 ;;		line 240 in file "aula1211.c"
+  2310 ;; Parameters:    Size  Location     Type
+  2311 ;;		None
+  2312 ;; Auto vars:     Size  Location     Type
+  2313 ;;  vatual          1    0[COMRAM] unsigned char 
+  2314 ;; Return value:  Size  Location     Type
+  2315 ;;                  1    wreg      void 
+  2316 ;; Registers used:
+  2317 ;;		wreg, status,2, status,0
+  2318 ;; Tracked objects:
+  2319 ;;		On entry : 0/0
+  2320 ;;		On exit  : 0/0
+  2321 ;;		Unchanged: 0/0
+  2322 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  2323 ;;      Params:         0       0       0       0       0       0       0       0       0
+  2324 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  2325 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  2326 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  2327 ;;Total ram usage:        1 bytes
+  2328 ;; Hardware stack levels used:    1
+  2329 ;; This function calls:
+  2330 ;;		Nothing
+  2331 ;; This function is called by:
+  2332 ;;		_f_timers
+  2333 ;; This function uses a non-reentrant model
+  2334 ;;
+  2335                           
+  2336                           	psect	text11
+  2337  007A22                     __ptext11:
+  2338                           	opt stack 0
+  2339  007A22                     _f_timer2:
+  2340                           	opt stack 28
+  2341                           
+  2342                           ;aula1211.c: 241: static unsigned char vantd0=1, vantd1=1, vantre0=1;
+  2343                           ;aula1211.c: 242: unsigned char vatual;
+  2344                           ;aula1211.c: 243: vatual = RD0;
+  2345                           
+  2346                           ;incstack = 0
+  2347  007A22  0E00               	movlw	0
+  2348  007A24  B083               	btfsc	3971,0,c	;volatile
+  2349  007A26  0E01               	movlw	1
+  2350  007A28  6E19               	movwf	f_timer2@vatual,c
+  2351                           
+  2352                           ;aula1211.c: 244: if(vatual>vantd0){
+  2353  007A2A  5019               	movf	f_timer2@vatual,w,c
+  2354  007A2C  5C17               	subwf	f_timer2@vantd0,w,c
+  2355  007A2E  B0D8               	btfsc	status,0,c
+  2356  007A30  D005               	goto	l1076
+  2357                           
+  2358                           ;aula1211.c: 245: if(seq==0) seq=1;
+  2359  007A32  500D               	movf	_seq,w,c
+  2360  007A34  A4D8               	btfss	status,2,c
+  2361  007A36  D002               	goto	l1076
+  2362  007A38  0E01               	movlw	1
+  2363  007A3A  6E0D               	movwf	_seq,c
+  2364  007A3C                     l1076:
+  2365                           
+  2366                           ;aula1211.c: 246: }
+  2367                           ;aula1211.c: 247: if(vatual<vantd0){
+  2368  007A3C  5017               	movf	f_timer2@vantd0,w,c
+  2369  007A3E  5C19               	subwf	f_timer2@vatual,w,c
+  2370  007A40  B0D8               	btfsc	status,0,c
+  2371  007A42  D005               	goto	l1082
+  2372                           
+  2373                           ;aula1211.c: 248: if(seq==1) seq=0;
+  2374  007A44  040D               	decf	_seq,w,c
+  2375  007A46  A4D8               	btfss	status,2,c
+  2376  007A48  D002               	goto	l1082
+  2377  007A4A  0E00               	movlw	0
+  2378  007A4C  6E0D               	movwf	_seq,c
+  2379  007A4E                     l1082:
+  2380                           
+  2381                           ;aula1211.c: 249: }
+  2382                           ;aula1211.c: 250: vantd0 = vatual;
+  2383  007A4E  C019  F017         	movff	f_timer2@vatual,f_timer2@vantd0
+  2384                           
+  2385                           ;aula1211.c: 252: vatual = RD1;
+  2386  007A52  0E00               	movlw	0
+  2387  007A54  B283               	btfsc	3971,1,c	;volatile
+  2388  007A56  0E01               	movlw	1
+  2389  007A58  6E19               	movwf	f_timer2@vatual,c
+  2390                           
+  2391                           ;aula1211.c: 253: if(vatual>vantd1){
+  2392  007A5A  5019               	movf	f_timer2@vatual,w,c
+  2393  007A5C  5C16               	subwf	f_timer2@vantd1,w,c
+  2394  007A5E  B0D8               	btfsc	status,0,c
+  2395  007A60  D005               	goto	l1090
+  2396                           
+  2397                           ;aula1211.c: 254: if(acelera==0) acelera=1;
+  2398  007A62  5009               	movf	_acelera,w,c
+  2399  007A64  A4D8               	btfss	status,2,c
+  2400  007A66  D002               	goto	l1090
+  2401  007A68  0E01               	movlw	1
+  2402  007A6A  6E09               	movwf	_acelera,c
+  2403  007A6C                     l1090:
+  2404                           
+  2405                           ;aula1211.c: 255: }
+  2406                           ;aula1211.c: 256: if(vatual<vantd1){
+  2407  007A6C  5016               	movf	f_timer2@vantd1,w,c
+  2408  007A6E  5C19               	subwf	f_timer2@vatual,w,c
+  2409  007A70  B0D8               	btfsc	status,0,c
+  2410  007A72  D005               	goto	l1096
+  2411                           
+  2412                           ;aula1211.c: 257: if(acelera==1) acelera=0;
+  2413  007A74  0409               	decf	_acelera,w,c
+  2414  007A76  A4D8               	btfss	status,2,c
+  2415  007A78  D002               	goto	l1096
+  2416  007A7A  0E00               	movlw	0
+  2417  007A7C  6E09               	movwf	_acelera,c
+  2418  007A7E                     l1096:
+  2419                           
+  2420                           ;aula1211.c: 258: }
+  2421                           ;aula1211.c: 259: vantd1 = vatual;
+  2422  007A7E  C019  F016         	movff	f_timer2@vatual,f_timer2@vantd1
+  2423                           
+  2424                           ;aula1211.c: 262: vatual = RE0;
+  2425  007A82  0E00               	movlw	0
+  2426  007A84  B084               	btfsc	3972,0,c	;volatile
+  2427  007A86  0E01               	movlw	1
+  2428  007A88  6E19               	movwf	f_timer2@vatual,c
+  2429                           
+  2430                           ;aula1211.c: 263: if(vatual>vantre0){
+  2431  007A8A  5019               	movf	f_timer2@vatual,w,c
+  2432  007A8C  5C15               	subwf	f_timer2@vantre0,w,c
+  2433  007A8E  B0D8               	btfsc	status,0,c
+  2434  007A90  D007               	goto	l1106
+  2435                           
+  2436                           ;aula1211.c: 264: if(dir==0) dir=1; else dir=0;
+  2437  007A92  500C               	movf	_dir,w,c
+  2438  007A94  A4D8               	btfss	status,2,c
+  2439  007A96  D002               	goto	l1104
+  2440  007A98  0E01               	movlw	1
+  2441  007A9A  D001               	goto	L120
+  2442  007A9C                     l1104:
+  2443  007A9C  0E00               	movlw	0
+  2444  007A9E                     L120:
+  2445  007A9E  6E0C               	movwf	_dir,c
+  2446  007AA0                     l1106:
+  2447                           
+  2448                           ;aula1211.c: 265: }
+  2449                           ;aula1211.c: 266: vantre0 = vatual;
+  2450  007AA0  C019  F015         	movff	f_timer2@vatual,f_timer2@vantre0
+  2451                           
+  2452                           ;aula1211.c: 268: if(acelera==0){
+  2453  007AA4  5009               	movf	_acelera,w,c
+  2454  007AA6  A4D8               	btfss	status,2,c
+  2455  007AA8  D004               	goto	l1110
+  2456                           
+  2457                           ;aula1211.c: 269: max_timer3 = 1000;
+  2458  007AAA  0E03               	movlw	3
+  2459  007AAC  6E08               	movwf	_max_timer3+1,c
+  2460  007AAE  0EE8               	movlw	232
+  2461  007AB0  6E07               	movwf	_max_timer3,c
+  2462  007AB2                     l1110:
+  2463                           
+  2464                           ;aula1211.c: 270: }
+  2465                           ;aula1211.c: 271: if(acelera==1){
+  2466  007AB2  0409               	decf	_acelera,w,c
+  2467  007AB4  A4D8               	btfss	status,2,c
+  2468  007AB6  0012               	return	
+  2469                           
+  2470                           ;aula1211.c: 272: max_timer3 = 500;
+  2471  007AB8  0E01               	movlw	1
+  2472  007ABA  6E08               	movwf	_max_timer3+1,c
+  2473  007ABC  0EF4               	movlw	244
+  2474  007ABE  6E07               	movwf	_max_timer3,c
+  2475  007AC0  0012               	return	
+  2476  007AC2                     __end_of_f_timer2:
+  2477                           	opt stack 0
+  2478                           tblptru	equ	0xFF8
+  2479                           tblptrh	equ	0xFF7
+  2480                           tblptrl	equ	0xFF6
+  2481                           tablat	equ	0xFF5
+  2482                           postinc0	equ	0xFEE
+  2483                           wreg	equ	0xFE8
+  2484                           postdec1	equ	0xFE5
+  2485                           fsr1l	equ	0xFE1
+  2486                           status	equ	0xFD8
+  2487                           
+  2488 ;; *************** function _f_timer1 *****************
+  2489 ;; Defined at:
+  2490 ;;		line 235 in file "aula1211.c"
+  2491 ;; Parameters:    Size  Location     Type
+  2492 ;;		None
+  2493 ;; Auto vars:     Size  Location     Type
+  2494 ;;		None
+  2495 ;; Return value:  Size  Location     Type
+  2496 ;;                  1    wreg      void 
+  2497 ;; Registers used:
+  2498 ;;		wreg, status,2, status,0, cstack
+  2499 ;; Tracked objects:
+  2500 ;;		On entry : 0/0
+  2501 ;;		On exit  : 0/0
+  2502 ;;		Unchanged: 0/0
+  2503 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  2504 ;;      Params:         0       0       0       0       0       0       0       0       0
+  2505 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  2506 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  2507 ;;      Totals:         0       0       0       0       0       0       0       0       0
+  2508 ;;Total ram usage:        0 bytes
+  2509 ;; Hardware stack levels used:    1
+  2510 ;; Hardware stack levels required when called:    1
+  2511 ;; This function calls:
+  2512 ;;		_LAT
+  2513 ;; This function is called by:
+  2514 ;;		_f_timers
+  2515 ;; This function uses a non-reentrant model
+  2516 ;;
+  2517                           
+  2518                           	psect	text12
+  2519  00788E                     __ptext12:
+  2520                           	opt stack 0
+  2521  00788E                     _f_timer1:
+  2522                           	opt stack 27
+  2523                           
+  2524                           ;aula1211.c: 236: LAT(10, dd);
+  2525                           
+  2526                           ;incstack = 0
+  2527  00788E  C00B  F019         	movff	_dd,LAT@dado
+  2528  007892  0E0A               	movlw	10
+  2529  007894  EC52  F03C         	call	_LAT
+  2530                           
+  2531                           ;aula1211.c: 237: LAT(20, du);
+  2532  007898  C00A  F019         	movff	_du,LAT@dado
+  2533  00789C  0E14               	movlw	20
+  2534  00789E  EC52  F03C         	call	_LAT
+  2535  0078A2  0012               	return		;funcret
+  2536  0078A4                     __end_of_f_timer1:
+  2537                           	opt stack 0
+  2538                           tblptru	equ	0xFF8
+  2539                           tblptrh	equ	0xFF7
+  2540                           tblptrl	equ	0xFF6
+  2541                           tablat	equ	0xFF5
+  2542                           postinc0	equ	0xFEE
+  2543                           wreg	equ	0xFE8
+  2544                           postdec1	equ	0xFE5
+  2545                           fsr1l	equ	0xFE1
+  2546                           status	equ	0xFD8
+  2547                           
+  2548 ;; *************** function _LAT *****************
+  2549 ;; Defined at:
+  2550 ;;		line 98 in file "aula1211.c"
+  2551 ;; Parameters:    Size  Location     Type
+  2552 ;;  porta           1    wreg     unsigned char 
+  2553 ;;  dado            1    0[COMRAM] unsigned char 
+  2554 ;; Auto vars:     Size  Location     Type
+  2555 ;;  porta           1    1[COMRAM] unsigned char 
+  2556 ;; Return value:  Size  Location     Type
+  2557 ;;                  1    wreg      void 
+  2558 ;; Registers used:
+  2559 ;;		wreg, status,2, status,0
+  2560 ;; Tracked objects:
+  2561 ;;		On entry : 0/0
+  2562 ;;		On exit  : 0/0
+  2563 ;;		Unchanged: 0/0
+  2564 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  2565 ;;      Params:         1       0       0       0       0       0       0       0       0
+  2566 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  2567 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  2568 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  2569 ;;Total ram usage:        2 bytes
+  2570 ;; Hardware stack levels used:    1
+  2571 ;; This function calls:
+  2572 ;;		Nothing
+  2573 ;; This function is called by:
+  2574 ;;		_setup
+  2575 ;;		_f_timer1
+  2576 ;;		_f_timer3
+  2577 ;; This function uses a non-reentrant model
+  2578 ;;
+  2579                           
+  2580                           	psect	text13
+  2581  0078A4                     __ptext13:
+  2582                           	opt stack 0
+  2583  0078A4                     _LAT:
+  2584                           	opt stack 29
+  2585                           
+  2586                           ;incstack = 0
+  2587                           ;LAT@porta stored from wreg
+  2588  0078A4  6E1A               	movwf	LAT@porta,c
+  2589                           
+  2590                           ;aula1211.c: 100: if (porta==10) LATA = dado;
+  2591  0078A6  0E0A               	movlw	10
+  2592  0078A8  181A               	xorwf	LAT@porta,w,c
+  2593  0078AA  B4D8               	btfsc	status,2,c
+  2594  0078AC  C019  FF89         	movff	LAT@dado,3977	;volatile
+  2595                           
+  2596                           ;aula1211.c: 101: if (porta==20) LATB = dado;
+  2597  0078B0  0E14               	movlw	20
+  2598  0078B2  181A               	xorwf	LAT@porta,w,c
+  2599  0078B4  B4D8               	btfsc	status,2,c
+  2600  0078B6  C019  FF8A         	movff	LAT@dado,3978	;volatile
+  2601                           
+  2602                           ;aula1211.c: 102: if (porta==30) LATC = dado;
+  2603  0078BA  0E1E               	movlw	30
+  2604  0078BC  181A               	xorwf	LAT@porta,w,c
+  2605  0078BE  B4D8               	btfsc	status,2,c
+  2606  0078C0  C019  FF8B         	movff	LAT@dado,3979	;volatile
+  2607                           
+  2608                           ;aula1211.c: 103: if (porta==40) LATD = dado;
+  2609  0078C4  0E28               	movlw	40
+  2610  0078C6  181A               	xorwf	LAT@porta,w,c
+  2611  0078C8  A4D8               	btfss	status,2,c
+  2612  0078CA  0012               	return	
+  2613  0078CC  C019  FF8C         	movff	LAT@dado,3980	;volatile
+  2614  0078D0  0012               	return	
+  2615  0078D2                     __end_of_LAT:
+  2616                           	opt stack 0
+  2617  0000                     tblptru	equ	0xFF8
+  2618                           tblptrh	equ	0xFF7
+  2619                           tblptrl	equ	0xFF6
+  2620                           tablat	equ	0xFF5
+  2621                           postinc0	equ	0xFEE
+  2622                           wreg	equ	0xFE8
+  2623                           postdec1	equ	0xFE5
+  2624                           fsr1l	equ	0xFE1
+  2625                           status	equ	0xFD8
+  2626                           tblptru	equ	0xFF8
+  2627                           tblptrh	equ	0xFF7
+  2628                           tblptrl	equ	0xFF6
+  2629                           tablat	equ	0xFF5
+  2630                           postinc0	equ	0xFEE
+  2631                           wreg	equ	0xFE8
+  2632                           postdec1	equ	0xFE5
+  2633                           fsr1l	equ	0xFE1
+  2634                           status	equ	0xFD8
+  2635                           
+  2636                           	psect	rparam
+  2637  0000                     tblptru	equ	0xFF8
+  2638                           tblptrh	equ	0xFF7
+  2639                           tblptrl	equ	0xFF6
+  2640                           tablat	equ	0xFF5
+  2641                           postinc0	equ	0xFEE
+  2642                           wreg	equ	0xFE8
+  2643                           postdec1	equ	0xFE5
+  2644                           fsr1l	equ	0xFE1
+  2645                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        4
+    BSS         16
+    Persistent  4
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      2      26
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _setup->_LAT
+    _setup->_f_maq_n_primo_c
+    _loop->_usleep
+    _f_timer3->_LAT
+    _f_timer3->_f_maq_n_3_c
+    _f_timer3->_f_maq_n_3_d
+    _f_timer3->_f_maq_n_primo_c
+    _f_timer3->_f_maq_n_primo_d
+    _f_timer1->_LAT
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0    2002
+                               _loop
+                              _setup
+                           _setup_hw
+ ---------------------------------------------------------------------------------
+ (1) _setup_hw                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _setup                                                0     0      0     593
+                                _LAT
+                    _f_maq_n_primo_c
+ ---------------------------------------------------------------------------------
+ (1) _loop                                                 0     0      0    1409
+                           _f_timers
+                             _usleep
+ ---------------------------------------------------------------------------------
+ (2) _usleep                                               2     0      2      43
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (2) _f_timers                                             0     0      0    1366
+                           _f_timer1
+                           _f_timer2
+                           _f_timer3
+ ---------------------------------------------------------------------------------
+ (3) _f_timer3                                             0     0      0     683
+                                _LAT
+                        _f_maq_n_3_c
+                        _f_maq_n_3_d
+                    _f_maq_n_primo_c
+                    _f_maq_n_primo_d
+ ---------------------------------------------------------------------------------
+ (4) _f_maq_n_primo_d                                      2     2      0      30
+                                              0 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ (2) _f_maq_n_primo_c                                      2     2      0      30
+                                              0 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ (4) _f_maq_n_3_d                                          2     2      0      30
+                                              0 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ (4) _f_maq_n_3_c                                          2     2      0      30
+                                              0 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ (3) _f_timer2                                             1     1      0     120
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (3) _f_timer1                                             0     0      0     563
+                                _LAT
+ ---------------------------------------------------------------------------------
+ (2) _LAT                                                  2     1      1     563
+                                              0 COMRAM     2     1      1
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _loop
+     _f_timers
+       _f_timer1
+         _LAT
+       _f_timer2
+       _f_timer3
+         _LAT
+         _f_maq_n_3_c
+         _f_maq_n_3_d
+         _f_maq_n_primo_c
+         _f_maq_n_primo_d
+     _usleep
+   _setup
+     _LAT
+     _f_maq_n_primo_c
+   _setup_hw
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7FF      0       0      21        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F      2      1A       1       27.4%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      1A      20        0.0%
+DATA                 0      0      1A       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.41 build -162212810 
+Symbol Table                                                                                   Mon Nov 16 22:53:50 2020
+
+                      _dd 000B               __CFG_BOR$ON 000000                        _du 000A  
+                      _sw 0010               __CFG_BORV$3 000000              __CFG_CP0$OFF 000000  
+            __CFG_CP1$OFF 000000              __CFG_CP2$OFF 000000              __CFG_CP3$OFF 000000  
+                     l215 7D56                       l241 7EA6                       l162 7C0A  
+                     l188 7FFC                       l900 7F26                       l910 7F4E  
+                     l902 7F2E                       l920 7F76                       l912 7F56  
+                     l904 7F36                       l930 7ADE                       l914 7F62  
+                     l906 7F3E                       l922 7F7E                       l940 7B16  
+                     l932 7AEA                       l916 7F6A                       l908 7F46  
+                     l950 7B4E                       l942 7B22                       l934 7AF2  
+                     l926 7AC6                       l960 7B76                       l952 7B56  
+                     l944 7B2A                       l936 7AFE                       l928 7AD2  
+                     l880 7EBA                       l962 7B7E                       l954 7B5E  
+                     l946 7B36                       l938 7B0A                       l890 7EF2  
+                     l882 7EC6                       l956 7B66                       l948 7B42  
+                     l892 7EFE                       l884 7ED2                       l980 7C3E  
+                     l972 7C12                       l966 7B8A                       l958 7B6E  
+                     l894 7F06                       l886 7EDA                       l878 7EAE  
+                     l990 7C76                       l982 7C4A                       l974 7C1E  
+                     l968 7B92                       l896 7F12                       l888 7EE6  
+                     l992 7C7E                       l984 7C56                       l976 7C2A  
+                     l898 7F1A                       l994 7C8A                       l986 7C62  
+                     l978 7C36                       l996 7C92                       l988 7C6E  
+                     l998 7C9A              __CFG_CPB$OFF 000000                       _RD0 007C18  
+                     _RD1 007C19                       _RE0 007C20                       _LAT 78A4  
+            __CFG_CPD$OFF 000000                       u477 7852                       _dir 000C  
+                     _key 000F                       _seq 000D                       wreg 000FE8  
+            __CFG_FOSC$HS 000000              __CFG_LVP$OFF 000000                      ?_LAT 0019  
+            __CFG_WDT$OFF 000000                      l1000 7CA2                      l1002 7CAE  
+                    l1020 7D5E                      l1012 7CD2                      l1004 7CB6  
+                    l1110 7AB2                      l1030 7D96                      l1022 7D6A  
+                    l1006 7CBE                      l1104 7A9C                      l1040 7DCE  
+                    l1032 7DA2                      l1024 7D76                      l1008 7CC6  
+                    l1016 7CDA                      l1106 7AA0                      l1050 7DFE  
+                    l1042 7DDA                      l1034 7DAE                      l1026 7D82  
+                    l1060 7E22                      l1052 7E06                      l1044 7DE6  
+                    l1036 7DBA                      l1028 7D8A                      l1054 7E0E  
+                    l1046 7DEE                      l1038 7DC2                      l1056 7E16  
+                    l1048 7DF6                      l1064 7E2A                      l1090 7A6C  
+                    l1082 7A4E                      l1242 79E4                      l1076 7A3C  
+                    l1236 79C6                      l1260 795E                      l1096 7A7E  
+                    l1248 7A02                      l1272 7988                      l1264 796A  
+                    l1276 799A                      l1268 797C                      l1298 7862  
+                    _LATA 000F89                      _LEDR 000E                      _LATB 000F8A  
+                    _LATC 000F8B                      _LATD 000F8C                      _main 785A  
+                    _loop 7868                      fsr1l 000FE1                      start 0000  
+           __CFG_IESO$OFF 000000             __CFG_MCLRE$ON 000000              ___param_bank 000000  
+                   ??_LAT 001A             __CFG_PLLDIV$1 000000            __CFG_CCP2MX$ON 000000  
+                   ?_main 0019                     ?_loop 0019                     _PORTA 000F80  
+                   _PORTB 000F81                     _PORTC 000F82                     _PORTD 000F83  
+           __CFG_USBDIV$1 000000                     _TRISA 000F92                     _TRISB 000F93  
+                   _TRISC 000F94                     _TRISD 000F95             __CFG_PWRT$OFF 000000  
+           __CFG_WRT0$OFF 000000             __CFG_WRT1$OFF 000000             __CFG_WRT2$OFF 000000  
+           __CFG_WRT3$OFF 000000            __CFG_EBTR0$OFF 000000            __CFG_FCMEN$OFF 000000  
+          __CFG_EBTR1$OFF 000000            __CFG_EBTR2$OFF 000000            __CFG_EBTR3$OFF 000000  
+           __CFG_WRTB$OFF 000000             __CFG_WRTC$OFF 000000             __CFG_WRTD$OFF 000000  
+          __CFG_EBTRB$OFF 000000                     _setup 7908      __size_of_f_maq_n_3_c 014C  
+    __size_of_f_maq_n_3_d 0150                     tablat 000FF5                     status 000FD8  
+          __CFG_ICPRT$OFF 000000            __CFG_PBADEN$ON 000000           __initialization 78D2  
+            __end_of_main 7868              __end_of_loop 787A                    ??_main 001B  
+                  ??_loop 001B             __activetblptr 000002                    _ADCON1 000FC1  
+                  ?_setup 0019          __end_of_f_timer1 78A4          __end_of_f_timer2 7AC2  
+        __end_of_f_timer3 7A22          __end_of_f_timers 79A8            __CFG_XINST$OFF 000000  
+          __CFG_STVREN$ON 000000                    _estado 0018                    clear_0 78F8  
+                  _usleep 7850              __pdataCOMRAM 0015                    tblptrh 000FF7  
+                  tblptrl 000FF6          __end_of_setup_hw 788E                    tblptru 000FF8  
+         _f_maq_n_primo_c 7EAA           _f_maq_n_primo_d 7C0E                __accesstop 0060  
+ __end_of__initialization 78FE             ___rparam_used 000001            __pcstackCOMRAM 0019  
+           __end_of_setup 794C                   ??_setup 001B                   LAT@dado 0019  
+              __pnvCOMRAM 0011   __end_of_f_maq_n_primo_c 8000   __end_of_f_maq_n_primo_d 7D5A  
+                 ?_usleep 0019                 ?_f_timer1 0019                 ?_f_timer2 0019  
+               ?_f_timer3 0019                 ?_f_timers 0019            f_timer2@vantd0 0017  
+          f_timer2@vantd1 0016            f_timer2@vatual 0019           __CFG_VREGEN$OFF 000000  
+         f_maq_n_3_c@prox 001A           f_maq_n_3_d@prox 001A                   __Hparam 0000  
+                 __Lparam 0000                 ?_setup_hw 0019                   _acelera 0009  
+              _max_timer1 0013                _max_timer2 0011                _max_timer3 0007  
+                 __pcinit 78D2                   __ramtop 0800                   __ptext0 785A  
+                 __ptext1 787A                   __ptext2 7908                   __ptext3 7868  
+                 __ptext4 7850                   __ptext5 794C                   __ptext6 79A8  
+                 __ptext7 7C0E                   __ptext8 7EAA                   __ptext9 7D5A  
+         __size_of_usleep 000A              __size_of_LAT 002E             ??_f_maq_n_3_c 0019  
+           ??_f_maq_n_3_d 0019                ??_f_timer1 001B                ??_f_timer2 0019  
+              ??_f_timer3 001B                ??_f_timers 001B      end_of_initialization 78FE  
+           __Lmediumconst 0000                   postdec1 000FE5                ??_setup_hw 0019  
+                 postinc0 000FEE      f_maq_n_primo_c@atual 0019      f_maq_n_primo_d@atual 0019  
+        ?_f_maq_n_primo_c 0019          ?_f_maq_n_primo_d 0019       __end_of_f_maq_n_3_c 7C0E  
+     __end_of_f_maq_n_3_d 7EAA             __pidataCOMRAM 784C            __end_of_usleep 785A  
+     start_initialization 78D2               __end_of_LAT 78D2          __CFG_LPT1OSC$OFF 000000  
+                ??_usleep 001B               __pbssCOMRAM 0001               _f_maq_n_3_c 7AC2  
+             _f_maq_n_3_d 7D5A                  LAT@porta 001A         __size_of_f_timer1 0016  
+       __size_of_f_timer2 00A0         __size_of_f_timer3 007A         __size_of_f_timers 005C  
+             usleep@tempo 0019         __size_of_setup_hw 0014            __size_of_setup 0044  
+        __CFG_WDTPS$32768 000000       f_maq_n_primo_c@prox 001A       f_maq_n_primo_d@prox 001A  
+         f_timer2@vantre0 0015          f_maq_n_3_c@atual 0019          f_maq_n_3_d@atual 0019  
+               copy_data0 78E6                  __Hrparam 0000                  __Lrparam 0000  
+                _f_timer1 788E                  _f_timer2 7A22                  _f_timer3 79A8  
+                _f_timers 794C                  __ptext10 7AC2                  __ptext11 7A22  
+                __ptext12 788E                  __ptext13 78A4  __size_of_f_maq_n_primo_c 0156  
+__size_of_f_maq_n_primo_d 014C             __size_of_main 000E             __size_of_loop 0012  
+                _setup_hw 787A     __CFG_CPUDIV$OSC1_PLL2 000000              ?_f_maq_n_3_c 0019  
+            ?_f_maq_n_3_d 0019         ??_f_maq_n_primo_c 0019         ??_f_maq_n_primo_d 0019  
+        f_timers@c_timer1 0005          f_timers@c_timer2 0003          f_timers@c_timer3 0001  

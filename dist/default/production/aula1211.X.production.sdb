@@ -1,0 +1,207 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"92 C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+[v _usleep usleep `(v  1 e 1 0 ]
+"98
+[v _LAT LAT `(v  1 e 1 0 ]
+"115
+[v _setup_hw setup_hw `(v  1 e 1 0 ]
+"165
+[v _main main `(i  1 e 2 0 ]
+"183
+[v _setup setup `(v  1 e 1 0 ]
+"197
+[v _loop loop `(v  1 e 1 0 ]
+"205
+[v _f_timers f_timers `(v  1 e 1 0 ]
+"235
+[v _f_timer1 f_timer1 `(v  1 e 1 0 ]
+"240
+[v _f_timer2 f_timer2 `(v  1 e 1 0 ]
+"277
+[v _f_timer3 f_timer3 `(v  1 e 1 0 ]
+"298
+[v _f_maq_n_3_c f_maq_n_3_c `(uc  1 e 1 0 ]
+"432
+[v _f_maq_n_primo_c f_maq_n_primo_c `(uc  1 e 1 0 ]
+"572
+[v _f_maq_n_primo_d f_maq_n_primo_d `(uc  1 e 1 0 ]
+"704
+[v _f_maq_n_3_d f_maq_n_3_d `(uc  1 e 1 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"161 C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+[v _max_timer1 max_timer1 `ui  1 e 2 0 ]
+[v _max_timer2 max_timer2 `ui  1 e 2 0 ]
+[v _max_timer3 max_timer3 `ui  1 e 2 0 ]
+"162
+[v _seq seq `uc  1 e 1 0 ]
+[v _dir dir `uc  1 e 1 0 ]
+"163
+[v _estado estado `uc  1 e 1 0 ]
+[v _dd dd `uc  1 e 1 0 ]
+[v _du du `uc  1 e 1 0 ]
+[v _acelera acelera `uc  1 e 1 0 ]
+"2280 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f4550.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"2418
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"2527
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"2668
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+"2934
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"3033
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"3144
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"3221
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"3383
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3580
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3801
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"3954
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"6497
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"9782
+[v _RD0 RD0 `VEb  1 e 0 @31768 ]
+"9784
+[v _RD1 RD1 `VEb  1 e 0 @31769 ]
+"9806
+[v _RE0 RE0 `VEb  1 e 0 @31776 ]
+"165 C:\Users\anton\Desktop\CEFET201\DispReprog\MPLABX\aula1211.X\aula1211.c
+[v _main main `(i  1 e 2 0 ]
+{
+"170
+} 0
+"115
+[v _setup_hw setup_hw `(v  1 e 1 0 ]
+{
+"121
+} 0
+"183
+[v _setup setup `(v  1 e 1 0 ]
+{
+"195
+} 0
+"197
+[v _loop loop `(v  1 e 1 0 ]
+{
+"202
+} 0
+"92
+[v _usleep usleep `(v  1 e 1 0 ]
+{
+[v usleep@tempo tempo `ui  1 p 2 0 ]
+"96
+} 0
+"205
+[v _f_timers f_timers `(v  1 e 1 0 ]
+{
+"207
+[v f_timers@c_timer1 c_timer1 `ui  1 s 2 c_timer1 ]
+[v f_timers@c_timer2 c_timer2 `ui  1 s 2 c_timer2 ]
+[v f_timers@c_timer3 c_timer3 `ui  1 s 2 c_timer3 ]
+"233
+} 0
+"277
+[v _f_timer3 f_timer3 `(v  1 e 1 0 ]
+{
+"296
+} 0
+"572
+[v _f_maq_n_primo_d f_maq_n_primo_d `(uc  1 e 1 0 ]
+{
+[v f_maq_n_primo_d@atual atual `uc  1 a 1 wreg ]
+"573
+[v f_maq_n_primo_d@prox prox `uc  1 a 1 1 ]
+"572
+[v f_maq_n_primo_d@atual atual `uc  1 a 1 wreg ]
+[v f_maq_n_primo_d@atual atual `uc  1 a 1 0 ]
+"702
+} 0
+"432
+[v _f_maq_n_primo_c f_maq_n_primo_c `(uc  1 e 1 0 ]
+{
+[v f_maq_n_primo_c@atual atual `uc  1 a 1 wreg ]
+"434
+[v f_maq_n_primo_c@prox prox `uc  1 a 1 1 ]
+"432
+[v f_maq_n_primo_c@atual atual `uc  1 a 1 wreg ]
+[v f_maq_n_primo_c@atual atual `uc  1 a 1 0 ]
+"570
+} 0
+"704
+[v _f_maq_n_3_d f_maq_n_3_d `(uc  1 e 1 0 ]
+{
+[v f_maq_n_3_d@atual atual `uc  1 a 1 wreg ]
+"705
+[v f_maq_n_3_d@prox prox `uc  1 a 1 1 ]
+"704
+[v f_maq_n_3_d@atual atual `uc  1 a 1 wreg ]
+[v f_maq_n_3_d@atual atual `uc  1 a 1 0 ]
+"834
+} 0
+"298
+[v _f_maq_n_3_c f_maq_n_3_c `(uc  1 e 1 0 ]
+{
+[v f_maq_n_3_c@atual atual `uc  1 a 1 wreg ]
+"300
+[v f_maq_n_3_c@prox prox `uc  1 a 1 1 ]
+"298
+[v f_maq_n_3_c@atual atual `uc  1 a 1 wreg ]
+[v f_maq_n_3_c@atual atual `uc  1 a 1 0 ]
+"430
+} 0
+"240
+[v _f_timer2 f_timer2 `(v  1 e 1 0 ]
+{
+"242
+[v f_timer2@vatual vatual `uc  1 a 1 0 ]
+"241
+[v f_timer2@vantd0 vantd0 `uc  1 s 1 vantd0 ]
+[v f_timer2@vantd1 vantd1 `uc  1 s 1 vantd1 ]
+[v f_timer2@vantre0 vantre0 `uc  1 s 1 vantre0 ]
+"275
+} 0
+"235
+[v _f_timer1 f_timer1 `(v  1 e 1 0 ]
+{
+"238
+} 0
+"98
+[v _LAT LAT `(v  1 e 1 0 ]
+{
+[v LAT@porta porta `uc  1 a 1 wreg ]
+[v LAT@porta porta `uc  1 a 1 wreg ]
+[v LAT@dado dado `uc  1 p 1 0 ]
+"100
+[v LAT@porta porta `uc  1 a 1 1 ]
+"104
+} 0
